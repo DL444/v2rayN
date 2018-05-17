@@ -1,7 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2043
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "v2rayN", "v2rayN\v2rayN.csproj", "{0A9785E6-D256-4B73-9757-4EF59955FD1E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "v2rayNPF", "v2rayNPF\v2rayNPF.csproj", "{B7AA2DAE-FB5C-469A-814F-C309FE207664}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,8 +22,19 @@ Global
 		{0A9785E6-D256-4B73-9757-4EF59955FD1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A9785E6-D256-4B73-9757-4EF59955FD1E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0A9785E6-D256-4B73-9757-4EF59955FD1E}.Release|x86.ActiveCfg = Release|Any CPU
+		{B7AA2DAE-FB5C-469A-814F-C309FE207664}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7AA2DAE-FB5C-469A-814F-C309FE207664}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7AA2DAE-FB5C-469A-814F-C309FE207664}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B7AA2DAE-FB5C-469A-814F-C309FE207664}.Debug|x86.Build.0 = Debug|Any CPU
+		{B7AA2DAE-FB5C-469A-814F-C309FE207664}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7AA2DAE-FB5C-469A-814F-C309FE207664}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7AA2DAE-FB5C-469A-814F-C309FE207664}.Release|x86.ActiveCfg = Release|Any CPU
+		{B7AA2DAE-FB5C-469A-814F-C309FE207664}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0EEB1849-9F98-4F72-874A-10B8339C07CB}
 	EndGlobalSection
 EndGlobal

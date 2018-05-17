@@ -1,0 +1,74 @@
+﻿<Window x:Name="MainWin" x:Class="v2rayN.Forms.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:v2rayN.Forms"
+        mc:Ignorable="d"
+        Title="V2RayNPF" Height="600" Width="800" Background="#FFBBBBBB" MinWidth="800" MinHeight="600" Loaded="MainWin_Loaded">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="250"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="72"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Margin="0,0,0.285,0" Grid.ColumnSpan="2" Orientation="Horizontal">
+            <Button x:Name="ServerBtn" Width="75" Margin="5,5,0,5">
+                <StackPanel>
+                    <Image Source="Servers.png" Height="25" Margin="0 0 0 2"/>
+                    <TextBlock>Servers</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button x:Name="SettingsBtn" Width="75" Margin="5,5,0,5">
+                <StackPanel>
+                    <Image Source="Settings.png" Height="25" Margin="0 0 0 2"/>
+                    <TextBlock>Settings</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button x:Name="RestartBtn" Width="75" Margin="5,5,0,5">
+                <StackPanel>
+                    <Image Source="Restart.png" Height="25" Margin="0 0 0 2"/>
+                    <TextBlock>Restart</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button x:Name="UpdateBtn" Width="75" Margin="5,5,0,5">
+                <StackPanel>
+                    <Image Source="Update.png" Height="25" Margin="0 0 0 2"/>
+                    <TextBlock>Update</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button x:Name="MinimizeBtn" Width="75" Margin="5,5,0,5">
+                <StackPanel>
+                    <Image Source="Minimize.png" Height="25" Margin="0 0 0 2"/>
+                    <TextBlock>Minimize</TextBlock>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+        <StackPanel Grid.Column="1" Grid.Row="1">
+            <CheckBox x:Name="ShareToggle" Content="Display Sharing Info" Margin="5,0,5,10"/>
+            <Image x:Name="QrImage" Margin="5,0,5,10"/>
+            <TextBox x:Name="AddressBox" Height="100" TextWrapping="Wrap" IsReadOnly="True" Margin="5,0,5,10" IsUndoEnabled="False"/>
+            <Button x:Name="CopyAddressBtn" Content="Copy" HorizontalAlignment="Left" Padding="10,1" Margin="5,0"/>
+        </StackPanel>
+        <TextBox x:Name="OutputBox" Grid.Row="2" Height="203" FontFamily="Consolas" Background="#FF012456" Foreground="White" Grid.ColumnSpan="2" IsReadOnly="True" IsUndoEnabled="False"/>
+        <ListView x:Name="ServerBox" Grid.Row="1">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="20"/>
+                    <GridViewColumn Header="Server Type" Width="70"/>
+                    <GridViewColumn Header="Alias" Width="100"/>
+                    <GridViewColumn Header="Address" Width="100"/>
+                    <GridViewColumn Header="Port" Width="40"/>
+                    <GridViewColumn Header="Encryption" Width="80"/>
+                    <GridViewColumn Header="Protocol" Width="55"/>
+                    <GridViewColumn Header="Test Result" Width="70"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+    </Grid>
+</Window>

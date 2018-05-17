@@ -1,0 +1,34 @@
+{
+  "inbound": [
+    {
+      "localPort": 1080,
+      "protocol": "socks",
+      "udpEnabled": true
+    }
+  ],
+  "logEnabled": false,
+  "loglevel": "warning",
+  "index": -1,
+  "vmess": [],
+  "muxEnabled": true,
+  "chinasites": false,
+  "chinaip": false,
+  "useragent": [],
+  "userdirect": [],
+  "userblock": [],
+  "kcpItem": {
+    "mtu": 1350,
+    "tti": 50,
+    "uplinkCapacity": 12,
+    "downlinkCapacity": 100,
+    "congestion": false,
+    "readBufferSize": 2,
+    "writeBufferSize": 2
+  },
+  "autoSyncTime": false,
+  "sysAgentEnabled": false,
+  "listenerType": 0,
+  "urlGFWList": null,
+  "allowLANConn": false,
+  "remoteDNS": null
+}
