@@ -71,7 +71,7 @@ namespace v2rayN.Forms
         }
 
         #endregion
-
+        // Done
         #region 显示服务器 listview 和 menu
 
         /// <summary>
@@ -166,6 +166,7 @@ namespace v2rayN.Forms
             }
         }
 
+        // This is the handler for menu items.
         private void ts_Click(object sender, EventArgs e)
         {
             try
@@ -201,6 +202,7 @@ namespace v2rayN.Forms
 
         #endregion
 
+        // Done
         #region v2ray 操作
 
         /// <summary>
@@ -612,7 +614,7 @@ namespace v2rayN.Forms
 
         #endregion
 
-
+        // Done
         #region 提示信息
 
         /// <summary>
@@ -682,7 +684,7 @@ namespace v2rayN.Forms
 
         #endregion
 
-
+        // Done
         #region 托盘事件
 
         private void notifyMain_MouseClick(object sender, MouseEventArgs e)
@@ -769,6 +771,7 @@ namespace v2rayN.Forms
 
         #endregion
 
+        // Done
         #region 移动服务器
 
         private void menuMoveTop_Click(object sender, EventArgs e)
@@ -809,6 +812,7 @@ namespace v2rayN.Forms
 
         #endregion
 
+        // Done
         #region 系统代理相关
 
         private void menuCopyPACUrl_Click(object sender, EventArgs e)

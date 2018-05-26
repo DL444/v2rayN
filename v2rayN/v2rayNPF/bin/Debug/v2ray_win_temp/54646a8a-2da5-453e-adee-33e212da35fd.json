@@ -1,0 +1,137 @@
+{
+  "ApplicationName": "ChainNews",
+  "DisplayName": "ChainNews",
+  "Description": "A news platform based on blockchain technology.",
+  "ApplicationRoles": [
+    {
+      "Name": "User",
+      "Description": "User of the platform"
+    }
+  ],
+  "Workflows": [
+    {
+      "Name": "HelloBlockchain",
+      "DisplayName": "Request Response",
+      "Description": "A simple workflow to send a request and receive a response.",
+      "Initiators": [ "Requestor" ],
+      "StartState": "Request",
+      "Properties": [
+        {
+          "Name": "Title",
+          "DisplayName": "Title",
+          "Description": "Title of the article.",
+          "Type": {
+            "Name": "string"
+          }
+        },
+        {
+          "Name": "Content",
+          "DisplayName": "Content",
+          "Description": "Content of the article.",
+          "Type": {
+            "Name": "string"
+          }
+        },
+        {
+          "Name": "Summary",
+          "DisplayName": "Summary",
+          "Description": "Summary of the article.",
+          "Type": {
+            "Name": "string"
+          }
+        },
+        {
+            "Name": "Publisher",
+            "DisplayName": "Publisher",
+            "Description": "Publisher of the title.",
+            "Type": {
+                "Name": "string"
+            }
+        }
+      ],
+      "Constructor": {
+        "Parameters": [
+          {
+            "Name": "message",
+            "Description": "...",
+            "DisplayName": "Request Message",
+            "Type": {
+              "Name": "string"
+            }
+          }
+        ]
+      },
+      "Functions": [
+        {
+          "Name": "PostArticle",
+          "DisplayName": "Post",
+          "Description": "...",
+          "Parameters": [
+            {
+              "Name": "title",
+              "Description": "...",
+              "DisplayName": "Article Title",
+              "Type": {
+                "Name": "string"
+              }
+            },
+            {
+                "Name": "content",
+                "Description": "...",
+                "DisplayName": "Article Content",
+                "Type": {
+                  "Name": "string"
+              }
+            },
+            {
+                "Name": "summary",
+                "Description": "...",
+                "DisplayName": "Article Summary",
+                "Type": {
+                  "Name": "string"
+              }
+            }
+          ]
+        }
+      ],
+      "States": [
+        {
+          "Name": "Article",
+          "DisplayName": "Article",
+          "Description": "...",
+          "PercentComplete": 50,
+          "Value": 0,
+          "Style": "Success",
+          "Transitions": [
+            {
+              "AllowedRoles": ["User"],
+              "AllowedInstanceRoles": [],
+              "Description": "...",
+              "Function": "SendResponse",
+              "NextStates": [ "Respond" ],
+              "DisplayName": "Send Response"
+            }
+          ]
+        },
+        {
+          "Name": "Respond",
+          "DisplayName": "Respond",
+          "Description": "...",
+          "PercentComplete": 90,
+          "Value": 1,
+          "Style": "Success",
+          "Transitions": [
+            {
+              "AllowedRoles": [],
+              "AllowedInstanceRoles": ["Requestor"],
+              "Description": "...",
+              "Function": "SendRequest",
+              "NextStates": [ "Request" ],
+              "DisplayName": "Send Request"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

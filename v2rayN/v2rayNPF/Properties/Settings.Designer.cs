@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace v2rayN.Forms.Properties
+namespace v2rayNPF.Forms.Properties
 {
 
 

@@ -1,4 +1,4 @@
-﻿namespace v2rayN.Forms
+﻿namespace v2rayNPF.Forms
 {
     partial class QRCodeControl
     {

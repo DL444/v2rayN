@@ -122,6 +122,9 @@
     <Compile Include="Mode\EMove.cs" />
     <Compile Include="Mode\SysproxyConfig.cs" />
     <Compile Include="Mode\EConfigType.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="StringEx.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -188,6 +191,14 @@
     <EmbeddedResource Include="Forms\AddServer3Form.resx">
       <DependentUpon>AddServer3Form.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="obj\Debug\v2rayN.Forms.AddServer2Form.resources" />
+    <EmbeddedResource Include="obj\Debug\v2rayN.Forms.AddServer3Form.resources" />
+    <EmbeddedResource Include="obj\Debug\v2rayN.Forms.AddServerForm.resources" />
+    <EmbeddedResource Include="obj\Debug\v2rayN.Forms.BaseForm.resources" />
+    <EmbeddedResource Include="obj\Debug\v2rayN.Forms.MainForm.resources" />
+    <EmbeddedResource Include="obj\Debug\v2rayN.Forms.OptionSettingForm.resources" />
+    <EmbeddedResource Include="obj\Debug\v2rayN.Forms.QRCodeControl.resources" />
+    <EmbeddedResource Include="obj\Debug\v2rayN.Properties.Resources.resources" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -201,6 +212,17 @@
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="bin\Debug\v2rayN.application" />
+    <None Include="bin\Debug\v2rayN.exe.config" />
+    <None Include="bin\Debug\v2rayN.exe.manifest" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\v2rayN.application" />
+    <None Include="obj\Debug\v2rayN.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\v2rayN.csproj.GenerateResource.cache" />
+    <None Include="obj\Debug\v2rayN.csprojResolveAssemblyReference.cache" />
+    <None Include="obj\Debug\v2rayN.exe.manifest" />
+    <None Include="obj\Release\v2rayN.csproj.CoreCompileInputs.cache" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -269,9 +291,19 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\checkupdate.png" />
+    <Content Include="bin\Debug\app.publish\v2rayN.exe" />
+    <Content Include="bin\Debug\v2rayN.exe" />
+    <Content Include="bin\Debug\v2rayN.pdb" />
+    <Content Include="obj\Debug\TempPE\Properties.Resources.Designer.cs.dll" />
+    <Content Include="obj\Debug\v2rayN.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\v2rayN.exe" />
+    <Content Include="obj\Debug\v2rayN.pdb" />
     <Content Include="Resources\privoxy_conf.txt" />
     <EmbeddedResource Include="zxing.presentation.dll" />
     <EmbeddedResource Include="zxing.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

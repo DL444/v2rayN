@@ -33,8 +33,23 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Hardcodet.Wpf.TaskbarNotification, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Hardcodet.NotifyIcon.Wpf.1.0.8\lib\net45\Hardcodet.Wpf.TaskbarNotification.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="QRCoder, Version=1.3.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\QRCoder.1.3.3\lib\net40\QRCoder.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Net" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -44,15 +59,67 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\QRCoder.1.3.3\lib\net40\UnityEngine.dll</HintPath>
+    </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="zxing">
+      <HintPath>.\zxing.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.presentation">
+      <HintPath>.\zxing.presentation.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddShadowsocksWindow.xaml.cs">
+      <DependentUpon>AddShadowsocksWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddVMessWindow.xaml.cs">
+      <DependentUpon>AddVMessWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Global.cs" />
+    <Compile Include="HttpProxyHandler\HttpProxyHandle.cs" />
+    <Compile Include="HttpProxyHandler\HttpWebServer.cs" />
+    <Compile Include="HttpProxyHandler\PACFileWatcherHandle.cs" />
+    <Compile Include="HttpProxyHandler\PACListHandle.cs" />
+    <Compile Include="HttpProxyHandler\PACServerHandle.cs" />
+    <Compile Include="HttpProxyHandler\PrivoxyHandler.cs" />
+    <Compile Include="HttpProxyHandler\SysProxyHandle.cs" />
+    <Compile Include="Mode\Config.cs" />
+    <Compile Include="Mode\EConfigType.cs" />
+    <Compile Include="Mode\EMove.cs" />
+    <Compile Include="Mode\SysproxyConfig.cs" />
+    <Compile Include="Mode\V2rayConfig.cs" />
+    <Compile Include="Mode\V2rayTcpRequest.cs" />
+    <Compile Include="Mode\VmessQRCode.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <DependentUpon>Resources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="SettingsWindow.xaml.cs">
+      <DependentUpon>SettingsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StringEx.cs" />
+    <Compile Include="Tool\CDateTime.cs" />
+    <Compile Include="Tool\FileManager.cs" />
+    <Compile Include="Tool\Job.cs" />
+    <Compile Include="Tool\Utils.cs" />
+    <Page Include="AddShadowsocksWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddVMessWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -61,19 +128,24 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Handler\ConfigHandler.cs" />
+    <Compile Include="Handler\QRCodeHelper.cs" />
+    <Compile Include="Handler\RoutingRuleHandler.cs" />
+    <Compile Include="Handler\V2rayConfigHandler.cs" />
+    <Compile Include="Handler\V2rayHandler.cs" />
+    <Compile Include="Handler\V2rayUpdateHandle.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="SettingsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -83,20 +155,22 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="Resources\abp.js.gz" />
+    <None Include="Resources\mgwz.dll.gz" />
+    <None Include="Resources\pac.txt.gz" />
+    <None Include="Resources\privoxy.exe.gz" />
+    <None Include="Resources\sysproxy.exe.gz" />
+    <None Include="Resources\sysproxy64.exe.gz" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\v2rayN\v2rayN.csproj">
-      <Project>{0a9785e6-d256-4b73-9757-4ef59955fd1e}</Project>
-      <Name>v2rayN</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Servers.png" />
@@ -110,6 +184,30 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Minimize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\checkupdate.png" />
+    <Resource Include="Resources\minimize.png" />
+    <Resource Include="Resources\option.png" />
+    <Resource Include="Resources\privoxy_conf.txt" />
+    <Resource Include="Resources\restart.png" />
+    <Resource Include="Resources\server.png" />
+    <EmbeddedResource Include="Sample\SampleClientConfig.txt" />
+    <EmbeddedResource Include="Sample\SampleHttprequest.txt" />
+    <EmbeddedResource Include="Sample\SampleHttpresponse.txt" />
+    <EmbeddedResource Include="Sample\SampleServerConfig.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Newtonsoft.Json.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="zxing.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="zxing.presentation.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="v2ray.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
