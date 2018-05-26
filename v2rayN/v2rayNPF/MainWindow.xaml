@@ -1,11 +1,13 @@
-﻿<Window x:Name="MainWin" x:Class="v2rayN.Forms.MainWindow"
+﻿<Window x:Name="MainWin" x:Class="v2rayNPF.Forms.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:v2rayN.Forms"
+        xmlns:mode="clr-namespace:v2rayNPF.Mode"
+        xmlns:local="clr-namespace:v2rayNPF.Forms"
+        xmlns:tb="http://www.hardcodet.net/taskbar"
         mc:Ignorable="d"
-        Title="V2RayNPF" Height="600" Width="800" Background="#FFBBBBBB" MinWidth="800" MinHeight="600" Loaded="MainWin_Loaded">
+        Title="V2RayNPF" Height="600" Width="800" Background="#FFBBBBBB" MinWidth="800" MinHeight="600" Loaded="MainWin_Loaded" Closing="MainWin_Closing" Icon="v2ray.ico" StateChanged="MainWin_StateChanged">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -16,59 +18,114 @@
             <RowDefinition Height="3*"/>
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
-        <StackPanel Margin="0,0,0.285,0" Grid.ColumnSpan="2" Orientation="Horizontal">
-            <Button x:Name="ServerBtn" Width="75" Margin="5,5,0,5">
-                <StackPanel>
-                    <Image Source="Servers.png" Height="25" Margin="0 0 0 2"/>
-                    <TextBlock>Servers</TextBlock>
-                </StackPanel>
-            </Button>
-            <Button x:Name="SettingsBtn" Width="75" Margin="5,5,0,5">
-                <StackPanel>
-                    <Image Source="Settings.png" Height="25" Margin="0 0 0 2"/>
-                    <TextBlock>Settings</TextBlock>
-                </StackPanel>
-            </Button>
-            <Button x:Name="RestartBtn" Width="75" Margin="5,5,0,5">
-                <StackPanel>
-                    <Image Source="Restart.png" Height="25" Margin="0 0 0 2"/>
-                    <TextBlock>Restart</TextBlock>
-                </StackPanel>
-            </Button>
-            <Button x:Name="UpdateBtn" Width="75" Margin="5,5,0,5">
-                <StackPanel>
-                    <Image Source="Update.png" Height="25" Margin="0 0 0 2"/>
-                    <TextBlock>Update</TextBlock>
-                </StackPanel>
-            </Button>
-            <Button x:Name="MinimizeBtn" Width="75" Margin="5,5,0,5">
-                <StackPanel>
-                    <Image Source="Minimize.png" Height="25" Margin="0 0 0 2"/>
+        <!--<StackPanel Margin="0,0,0.285,0" Grid.ColumnSpan="2" Orientation="Horizontal">-->
+        <Menu Grid.ColumnSpan="2" VerticalAlignment="Center" Background="{x:Null}" Margin="5,0" >
+            <MenuItem x:Name="ServerMenu" >
+                <MenuItem.Header>
+                    <StackPanel Margin="5,5,5,5">
+                        <Image Source="Servers.png" Height="25" Margin="0 0 0 2"/>
+                        <TextBlock>Servers</TextBlock>
+                    </StackPanel>
+                </MenuItem.Header>
+
+                <MenuItem Name="AddVmessMenuItem" Header="Add VMess Server..." Click="AddVmessMenuItem_Click"/>
+                <MenuItem Name="AddSSMenuItem" Header="Add Shadowsocks Server..." Click="AddSSMenuItem_Click"/>
+                <MenuItem Name="AddCustomServerMenuItem" Header="Add Custom Server..."/>
+                <MenuItem Name="ImportFromClipMenuItem" Header="Import from Clipboard"/>
+                <Separator/>
+                <MenuItem Name="RemoveServerMenuItem" Header="Remove Selected" Click="RemoveServerMenuItem_Click"/>
+                <MenuItem Name="CopyServerMenuItem" Header="Copy Selected" Click="CopyServerMenuItem_Click"/>
+                <MenuItem Name="ActivateServerMenuItem" Header="Activate Selected" Click="ActivateServerMenuItem_Click"/>
+                <Separator/>
+                <MenuItem Name="MoveToTopMenuItem" Header="Move Selected to Top" Click="MoveToTopMenuItem_Click"/>
+                <MenuItem Name="MoveUpMenuItem" Header="Move Up Selected" Click="MoveUpMenuItem_Click"/>
+                <MenuItem Name="MoveDownMenuItem" Header="Move Down Selected" Click="MoveDownMenuItem_Click"/>
+                <MenuItem Name="MoveToBottomMenuItem" Header="Move Selected to Bottom" Click="MoveToBottomMenuItem_Click"/>
+                <Separator/>
+                <MenuItem Name="ExportAsClientMenuItem" Header="Export Selected as Client" Click="ExportAsClientMenuItem_Click"/>
+                <MenuItem Name="ExportAsServerMenuItem" Header="Export Selected as Server" Click="ExportAsServerMenuItem_Click"/>
+                <MenuItem Name="ExportToClipMenuItem" Header="Export to Clipboard" Click="ExportToClipMenuItem_Click"/>
+
+            </MenuItem>
+            <MenuItem x:Name="SettingsMenu" Click="SettingsMenu_Click">
+                <MenuItem.Header>
+                    <StackPanel Margin="5,5,5,5">
+                        <Image Source="Settings.png" Height="25" Margin="0 0 0 2"/>
+                        <TextBlock>Settings</TextBlock>
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem x:Name="RestartMenu" Click="RestartMenu_Click">
+                <MenuItem.Header>
+                    <StackPanel Margin="5,5,5,5">
+                        <Image Source="Restart.png" Height="25" Margin="0 0 0 2"/>
+                        <TextBlock>Restart</TextBlock>
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem x:Name="UpdateMenu">
+                <MenuItem.Header>
+                    <StackPanel Margin="5,5,5,5">
+                        <Image Source="Update.png" Height="25" Margin="0 0 0 2"/>
+                        <TextBlock>Update</TextBlock>
+                    </StackPanel>
+                </MenuItem.Header>
+                <MenuItem Name="UpdateV2RayCoreMenuItem" Header="Update V2Ray Core"/>
+                <MenuItem Name="UpdatePACMenuItem" Header="Update PAC (System Proxy Required)"/>
+            </MenuItem>
+            <MenuItem x:Name="MinimizeMenu" Click="MinimizeMenu_Click">
+                <MenuItem.Header>
+                    <StackPanel Margin="5,5,5,5">
+                        <Image Source="Minimize.png" Height="25" Margin="0 0 0 2"/>
                     <TextBlock>Minimize</TextBlock>
                 </StackPanel>
-            </Button>
-        </StackPanel>
-        <StackPanel Grid.Column="1" Grid.Row="1">
-            <CheckBox x:Name="ShareToggle" Content="Display Sharing Info" Margin="5,0,5,10"/>
-            <Image x:Name="QrImage" Margin="5,0,5,10"/>
-            <TextBox x:Name="AddressBox" Height="100" TextWrapping="Wrap" IsReadOnly="True" Margin="5,0,5,10" IsUndoEnabled="False"/>
-            <Button x:Name="CopyAddressBtn" Content="Copy" HorizontalAlignment="Left" Padding="10,1" Margin="5,0"/>
-        </StackPanel>
-        <TextBox x:Name="OutputBox" Grid.Row="2" Height="203" FontFamily="Consolas" Background="#FF012456" Foreground="White" Grid.ColumnSpan="2" IsReadOnly="True" IsUndoEnabled="False"/>
-        <ListView x:Name="ServerBox" Grid.Row="1">
+                </MenuItem.Header>
+            </MenuItem>
+        </Menu>
+        <!--</StackPanel>-->
+        <Grid Grid.Column="1" Grid.Row="1" Margin="0,5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <CheckBox x:Name="ShareToggle" Content="Display Sharing Info" Margin="5,5,5,10" Checked="ShareToggle_Checked" Unchecked="ShareToggle_Unchecked" Grid.Row="0"/>
+            <Image x:Name="QrImage" Margin="5,0,5,10" Visibility="Collapsed" Grid.Row="1"/>
+            <TextBox x:Name="AddressBox" Height="100" TextWrapping="Wrap" IsReadOnly="True" Margin="5,0,5,10" IsUndoEnabled="False" Visibility="Collapsed" Grid.Row="2"/>
+            <Button x:Name="CopyAddressBtn" Content="Copy" HorizontalAlignment="Left" Padding="10,1" Margin="5,0" Visibility="Collapsed" Click="CopyAddressBtn_Click" Grid.Row="3"/>
+        </Grid>
+        <TextBox x:Name="OutputBox" Grid.Row="2" FontFamily="Consolas" Background="#FF012456" Foreground="White" Grid.ColumnSpan="2" IsReadOnly="True" IsUndoEnabled="False" Margin="5,0,5,5"/>
+        <ListView x:Name="ServerBox" Grid.Row="1" Margin="5" SelectionChanged="ServerBox_SelectionChanged">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Width="20"/>
-                    <GridViewColumn Header="Server Type" Width="70"/>
-                    <GridViewColumn Header="Alias" Width="100"/>
-                    <GridViewColumn Header="Address" Width="100"/>
-                    <GridViewColumn Header="Port" Width="40"/>
-                    <GridViewColumn Header="Encryption" Width="80"/>
-                    <GridViewColumn Header="Protocol" Width="55"/>
-                    <GridViewColumn Header="Test Result" Width="70"/>
+                    <!--<GridViewColumn Width="20" />-->
+                    <GridViewColumn Header="Server Type" Width="70" DisplayMemberBinding="{Binding Path=configType}"/>
+                    <GridViewColumn Header="Alias" Width="100" DisplayMemberBinding="{Binding Path=remarks}"/>
+                    <GridViewColumn Header="Address" Width="100" DisplayMemberBinding="{Binding Path=address}"/>
+                    <GridViewColumn Header="Port" Width="40" DisplayMemberBinding="{Binding Path=port}"/>
+                    <GridViewColumn Header="Encryption" Width="80" DisplayMemberBinding="{Binding Path=security}"/>
+                    <GridViewColumn Header="Protocol" Width="55" DisplayMemberBinding="{Binding Path=network}"/>
+                    <!--<GridViewColumn Header="Test Result" Width="70"/>-->
                 </GridView>
             </ListView.View>
         </ListView>
-
+        <tb:TaskbarIcon Name="NotifyIcon" IconSource="v2ray.ico" TrayContextMenuOpen="NotifyIcon_TrayContextMenuOpen" TrayMouseDoubleClick="NotifyIcon_TrayMouseDoubleClick">
+            <tb:TaskbarIcon.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Name="SystemProxyMenuToggle" Header="Enable System Proxy" IsCheckable="True" Click="SystemProxyMenuToggle_Click"/>
+                    <MenuItem Name="SystemProxyModeMenuItem" Header="System Proxy Mode">
+                        <MenuItem Name="GlobalProxyMenuItem" Header="Global" IsCheckable="True" Click="GlobalProxyMenuItem_Click"/>
+                        <MenuItem Name="PACProxyMenuItem" Header="PAC" IsCheckable="True" Click="PACProxyMenuItem_Click"/>
+                        <Separator/>
+                        <MenuItem Name="UnchangeProxyMenuItem" Header="Keep current mode unchanged" IsCheckable="True" Click="UnchangeProxyMenuItem_Click"/>
+                    </MenuItem>
+                    <MenuItem Name="ServersMenuItem" Header="Servers"/>
+                    <MenuItem Name="CopyPACMenuItem" Header="Copy local PAC address" Click="CopyPACMenuItem_Click"/>
+                    <Separator/>
+                    <MenuItem Name="ExitMenuItem" Header="Exit" Click="ExitMenuItem_Click"/>
+                </ContextMenu>
+            </tb:TaskbarIcon.ContextMenu>
+        </tb:TaskbarIcon>
     </Grid>
 </Window>
