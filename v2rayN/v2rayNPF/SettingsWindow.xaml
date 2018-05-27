@@ -3,8 +3,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:props="clr-namespace:v2rayNPF.Properties"
         mc:Ignorable="d"
-        Title="Settings" Height="800" Width="600" Background="#FFBBBBBB" Icon="icon.ico" ResizeMode="NoResize" ShowInTaskbar="False" WindowStartupLocation="CenterOwner" Topmost="True" SizeToContent="Height">
+        Title="{x:Static props:Resources.SettingsWindow}" Height="800" Width="600" Background="#FFBBBBBB" Icon="icon.ico" ResizeMode="NoResize" ShowInTaskbar="False" WindowStartupLocation="CenterOwner" Topmost="True" SizeToContent="Height">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -12,11 +13,11 @@
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center" Margin="0,0,0,0">
-            <Button Name="OkBtn" Content="OK" Width="75" Margin="10,0,0,10" Click="OkBtn_Click"/>
-            <Button Name="CancelBtn" Content="Cancel" Width="75" Margin="10,0,0,10" Click="CancelBtn_Click"/>
+            <Button Name="OkBtn" Content="{x:Static props:Resources.OKBtn}" Width="75" Margin="10,0,0,10" Click="OkBtn_Click"/>
+            <Button Name="CancelBtn" Content="{x:Static props:Resources.CancelBtn}" Width="75" Margin="10,0,0,10" Click="CancelBtn_Click"/>
         </StackPanel>
         <TabControl Margin="5">
-            <TabItem Header="Core: Basics">
+            <TabItem Header="{x:Static props:Resources.BasicSettingsTab}">
                 <Grid Background="#FFE5E5E5">
                     <StackPanel Margin="15,20,15,20">
                         <Grid Margin="0,5">
@@ -28,14 +29,14 @@
                                 <ColumnDefinition/>
                                 <ColumnDefinition Width="98"/>
                             </Grid.ColumnDefinitions>
-                            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Local Listening Port 1" VerticalAlignment="Center" Grid.Column="1"/>
+                            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{x:Static props:Resources.SettingsInbound1}" VerticalAlignment="Center" Grid.Column="1"/>
                             <TextBox Name="ListenPort1Box" Height="19" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Column="2"/>
-                            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Protocol" VerticalAlignment="Center" Grid.Column="3" Margin="10,0,0,0"/>
+                            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{x:Static props:Resources.SettingsInboundProtocol}" VerticalAlignment="Center" Grid.Column="3" Margin="10,0,0,0"/>
                             <ComboBox Name="ListenPort1ProtocolBox" VerticalAlignment="Center" Grid.Column="4" SelectedIndex="0">
                                 <ComboBoxItem Content="socks"/>
                                 <ComboBoxItem Content="http"/>
                             </ComboBox>
-                            <CheckBox Name="ListenPort1UdpToggle" Content="Enable UDP" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="5" Margin="10,0,0,0"/>
+                            <CheckBox Name="ListenPort1UdpToggle" Content="{x:Static props:Resources.SettingsInboundUdp}" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="5" Margin="10,0,0,0"/>
                         </Grid>
                         <Grid Margin="0,5">
                             <Grid.ColumnDefinitions>
@@ -47,14 +48,14 @@
                                 <ColumnDefinition Width="98"/>
                             </Grid.ColumnDefinitions>
                             <CheckBox Name="ListenPort2Toggle" HorizontalAlignment="Center" VerticalAlignment="Center" IsChecked="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, Path=ListenPort2Enabled}" Checked="ListenPort2Toggle_Checked" Unchecked="ListenPort2Toggle_Unchecked" />
-                            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Local Listening Port 2" VerticalAlignment="Center" Grid.Column="1"/>
+                            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{x:Static props:Resources.SettingsInbound2}" VerticalAlignment="Center" Grid.Column="1"/>
                             <TextBox Name="ListenPort2Box" Height="19" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Column="2" IsEnabled="False"/>
-                            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Protocol" VerticalAlignment="Center" Grid.Column="3" Margin="10,0,0,0"/>
+                            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{x:Static props:Resources.SettingsInboundProtocol}" VerticalAlignment="Center" Grid.Column="3" Margin="10,0,0,0"/>
                             <ComboBox Name="ListenPort2ProtocolBox" VerticalAlignment="Center" Grid.Column="4" SelectedIndex="0" IsEnabled="False">
                                 <ComboBoxItem Content="socks"/>
                                 <ComboBoxItem Content="http"/>
                             </ComboBox>
-                            <CheckBox Name="ListenPort2UdpToggle" Content="Enable UDP" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="5" Margin="10,0,0,0" IsEnabled="False"/>
+                            <CheckBox Name="ListenPort2UdpToggle" Content="{x:Static props:Resources.SettingsInboundUdp}" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="5" Margin="10,0,0,0" IsEnabled="False"/>
                         </Grid>
                         <Grid Margin="0,5">
                             <Grid.ColumnDefinitions>
@@ -62,7 +63,7 @@
                                 <ColumnDefinition Width="1*"/>
                             </Grid.ColumnDefinitions>
                             <CheckBox HorizontalAlignment="Center" VerticalAlignment="Center" IsChecked="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, Path=TempItem.muxEnabled}"/>
-                            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Enable Mux Multiplex (Default: On)" VerticalAlignment="Center" Grid.Column="1"/>
+                            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{x:Static props:Resources.SettingsMuxMultiplex}" VerticalAlignment="Center" Grid.Column="1"/>
                         </Grid>
                         <Grid Margin="0,5">
                             <Grid.ColumnDefinitions>
@@ -72,8 +73,8 @@
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
                             <CheckBox HorizontalAlignment="Center" VerticalAlignment="Center" IsChecked="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, Path=TempItem.logEnabled}"/>
-                            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Enable Local Logging (Default: Off)" VerticalAlignment="Center" Grid.Column="1" />
-                            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Logging Level" VerticalAlignment="Center" Grid.Column="2" Margin="10,0,0,0"/>
+                            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{x:Static props:Resources.SettingsLogging}" VerticalAlignment="Center" Grid.Column="1" />
+                            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{x:Static props:Resources.SettingsLogLevel}" VerticalAlignment="Center" Grid.Column="2" Margin="10,0,0,0"/>
                             <ComboBox Name="LogLevelBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="115" Grid.Column="3" SelectedIndex="2">
                                 <ComboBoxItem Content="debug"/>
                                 <ComboBoxItem Content="info"/>
@@ -87,31 +88,31 @@
                                 <ColumnDefinition Width="220"/>
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
-                            <TextBlock TextWrapping="Wrap" Text="Custom DNS (Separated with Comma)" VerticalAlignment="Center" Grid.Column="0" Margin="5,0,0,0" Height="16"/>
+                            <TextBlock TextWrapping="Wrap" Text="{x:Static props:Resources.SettingsCustomDns}" VerticalAlignment="Center" Grid.Column="0" Margin="5,0,0,0" Height="16"/>
                             <TextBox Height="19" Margin="0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1" Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, Path=TempItem.remoteDNS}"/>
                         </Grid>
 
                     </StackPanel>
                 </Grid>
             </TabItem>
-            <TabItem Header="Core: Routing">
+            <TabItem Header="{x:Static props:Resources.RoutingSettingsTab}">
                 <Grid Background="#FFE5E5E5">
                     <StackPanel Margin="15,20,15,20">
-                        <CheckBox Content="Bypass mainland China addresses (Requires Core v2.46+)" Margin="0,5" IsChecked="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, Path=TempItem.chinasites}"/>
-                        <CheckBox Content="Bypass mainland China IP (Requires Core v2.46+)" Margin="0,5" IsChecked="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, Path=TempItem.chinaip}"/>
-                        <TextBlock TextWrapping="Wrap" Text="Custom routing rules separated with comma:" VerticalAlignment="Center" Margin="0,10,0,3" Height="16"/>
+                        <CheckBox Content="{x:Static props:Resources.SettingsBypassMainlandAddress}" Margin="0,5" IsChecked="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, Path=TempItem.chinasites}"/>
+                        <CheckBox Content="{x:Static props:Resources.SettingsBypassMainlandIp}" Margin="0,5" IsChecked="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, Path=TempItem.chinaip}"/>
+                        <TextBlock TextWrapping="Wrap" Text="{x:Static props:Resources.SettingsRoutingRulesLabel}" VerticalAlignment="Center" Margin="0,10,0,3" Height="16"/>
                         <TabControl Height="200">
-                            <TabItem Header="Through Proxy">
+                            <TabItem Header="{x:Static props:Resources.SettingsProxyRoutingTab}">
                                 <Grid Background="#FFE5E5E5">
                                     <TextBox FontFamily="Consolas" Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, Path=ProxyRouteList}"/>
                                 </Grid>
                             </TabItem>
-                            <TabItem Header="Direct Connect">
+                            <TabItem Header="{x:Static props:Resources.SettingsDirectRoutingTab}">
                                 <Grid Background="#FFE5E5E5">
                                     <TextBox FontFamily="Consolas" Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, Path=DirectRouteList}"/>
                                 </Grid>
                             </TabItem>
-                            <TabItem Header="Blocked">
+                            <TabItem Header="{x:Static props:Resources.SettingsBlockedRoutingTab}">
                                 <Grid Background="#FFE5E5E5">
                                     <TextBox FontFamily="Consolas" Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, Path=BlockedRouteList}"/>
                                 </Grid>
@@ -122,9 +123,9 @@
 
                 </Grid>
             </TabItem>
-            <TabItem Header="Core: KCP">
+            <TabItem Header="{x:Static props:Resources.KcpSettingsTab}">
                 <Grid Background="#FFE5E5E5">
-                    <StackPanel Margin="15,20,50,20">
+                    <StackPanel Margin="10,20,30,20">
                         <Grid Margin="0,5">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition />
@@ -168,17 +169,17 @@
 
                 </Grid>
             </TabItem>
-            <TabItem Header="V2RayNPF">
+            <TabItem Header="{x:Static props:Resources.AppSettingsTab}">
                 <Grid Background="#FFE5E5E5">
                     <StackPanel Margin="15,20,15,20">
-                        <CheckBox Content="Launch on system startup (May Fail)" Margin="0,5" Name="SystemStartupToggle" Checked="SystemStartupToggle_Checked" Unchecked="SystemStartupToggle_Unchecked"/>
-                        <CheckBox Content="Allow connection from LAN" Margin="0,5" IsChecked="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, Path=TempItem.allowLANConn}"/>
-                        <TextBlock TextWrapping="Wrap" Text="Custom GFWList Address (Leave blank if not needed)" VerticalAlignment="Center" Margin="0,5,0,3" Height="16"/>
+                        <CheckBox Content="{x:Static props:Resources.SettingsSystemStartup}" Margin="0,5" Name="SystemStartupToggle" Checked="SystemStartupToggle_Checked" Unchecked="SystemStartupToggle_Unchecked"/>
+                        <CheckBox Content="{x:Static props:Resources.SettingsAllowLan}" Margin="0,5" IsChecked="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, Path=TempItem.allowLANConn}"/>
+                        <TextBlock TextWrapping="Wrap" Text="{x:Static props:Resources.SettingsCustomGFWListAddress}" VerticalAlignment="Center" Margin="0,5,0,3" Height="16"/>
                         <TextBox Height="19" Margin="0,0,0,5" TextWrapping="Wrap" VerticalAlignment="Top" Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, Path=TempItem.urlGFWList}"/>
-                        <TextBlock TextWrapping="Wrap" Text="*Enabling System Proxy:" VerticalAlignment="Center" Margin="0,5,0,0" Height="16"/>
-                        <TextBlock TextWrapping="Wrap" Text="Global Mode: Port = Socks Port + 1" VerticalAlignment="Center" Margin="0" Height="16"/>
-                        <TextBlock TextWrapping="Wrap" Text="PAC Mode: Port = Socks Port + 2; Priority: PAC > V2Ray Routing" VerticalAlignment="Center" Margin="0,0,0,5" Height="16"/>
-                        <CheckBox Content="Sync local time on launch (May Fail)" Margin="0,5" IsChecked="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, Path=TempItem.autoSyncTime}"/>
+                        <TextBlock TextWrapping="Wrap" Text="{x:Static props:Resources.SettingsSystemProxyHintLn1}" VerticalAlignment="Center" Margin="0,5,0,0" Height="16"/>
+                        <TextBlock TextWrapping="Wrap" Text="{x:Static props:Resources.SettingsSystemProxyHintLn2}" VerticalAlignment="Center" Margin="0" Height="16"/>
+                        <TextBlock TextWrapping="Wrap" Text="{x:Static props:Resources.SettingsSystemProxyHintLn3}" VerticalAlignment="Center" Margin="0,0,0,5" Height="16"/>
+                        <CheckBox Content="{x:Static props:Resources.SettingsSyncTime}" Margin="0,5" IsChecked="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, Path=TempItem.autoSyncTime}"/>
                     </StackPanel>
 
                 </Grid>
