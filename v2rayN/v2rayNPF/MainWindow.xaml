@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:v2rayNPF.Forms"
         xmlns:tb="http://www.hardcodet.net/taskbar"
         mc:Ignorable="d"
-        Title="V2RayNPF" Height="600" Width="800" Background="#FFBBBBBB" MinWidth="800" MinHeight="600" Loaded="MainWin_Loaded" Closing="MainWin_Closing" Icon="v2ray.ico" StateChanged="MainWin_StateChanged">
+        Title="V2RayNPF" Height="600" Width="800" Background="#FFBBBBBB" MinWidth="800" MinHeight="600" Loaded="MainWin_Loaded" Closing="MainWin_Closing" Icon="icon.ico" StateChanged="MainWin_StateChanged">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -30,8 +30,8 @@
 
                 <MenuItem Name="AddVmessMenuItem" Header="Add VMess Server..." Click="AddVmessMenuItem_Click"/>
                 <MenuItem Name="AddSSMenuItem" Header="Add Shadowsocks Server..." Click="AddSSMenuItem_Click"/>
-                <MenuItem Name="AddCustomServerMenuItem" Header="Add Custom Server..."/>
-                <MenuItem Name="ImportFromClipMenuItem" Header="Import from Clipboard"/>
+                <MenuItem Name="AddCustomServerMenuItem" Header="Add Custom Server..." Click="AddCustomServerMenuItem_Click"/>
+                <MenuItem Name="ImportFromClipMenuItem" Header="Import from Clipboard" Click="ImportFromClipMenuItem_Click"/>
                 <Separator/>
                 <MenuItem Name="RemoveServerMenuItem" Header="Remove Selected" Click="RemoveServerMenuItem_Click"/>
                 <MenuItem Name="CopyServerMenuItem" Header="Copy Selected" Click="CopyServerMenuItem_Click"/>
@@ -44,7 +44,7 @@
                 <Separator/>
                 <MenuItem Name="ExportAsClientMenuItem" Header="Export Selected as Client" Click="ExportAsClientMenuItem_Click"/>
                 <MenuItem Name="ExportAsServerMenuItem" Header="Export Selected as Server" Click="ExportAsServerMenuItem_Click"/>
-                <MenuItem Name="ExportToClipMenuItem" Header="Export to Clipboard" Click="ExportToClipMenuItem_Click"/>
+                <MenuItem Name="ExportToClipMenuItem" Header="Export All to Clipboard" Click="ExportToClipMenuItem_Click"/>
 
             </MenuItem>
             <MenuItem x:Name="SettingsMenu" Click="SettingsMenu_Click">
@@ -63,7 +63,7 @@
                     </StackPanel>
                 </MenuItem.Header>
             </MenuItem>
-            <MenuItem x:Name="UpdateMenu">
+            <MenuItem x:Name="UpdateMenu" Visibility="Collapsed">
                 <MenuItem.Header>
                     <StackPanel Margin="5,5,5,5">
                         <Image Source="Update.png" Height="25" Margin="0 0 0 2"/>
@@ -77,8 +77,8 @@
                 <MenuItem.Header>
                     <StackPanel Margin="5,5,5,5">
                         <Image Source="Minimize.png" Height="25" Margin="0 0 0 2"/>
-                    <TextBlock>Minimize</TextBlock>
-                </StackPanel>
+                        <TextBlock>Minimize</TextBlock>
+                    </StackPanel>
                 </MenuItem.Header>
             </MenuItem>
         </Menu>
@@ -96,21 +96,27 @@
             <Button x:Name="CopyAddressBtn" Content="Copy" HorizontalAlignment="Left" Padding="10,1" Margin="5,0" Visibility="Collapsed" Click="CopyAddressBtn_Click" Grid.Row="3"/>
         </Grid>
         <TextBox x:Name="OutputBox" Grid.Row="2" FontFamily="Consolas" Background="#FF012456" Foreground="White" Grid.ColumnSpan="2" IsReadOnly="True" IsUndoEnabled="False" Margin="5,0,5,5"/>
-        <ListView x:Name="ServerBox" Grid.Row="1" Margin="5" SelectionChanged="ServerBox_SelectionChanged">
+        <ListView x:Name="ServerBox" Grid.Row="1" Margin="5" SelectionChanged="ServerBox_SelectionChanged" VirtualizingPanel.IsVirtualizing="False">
+            <ListView.Resources>
+                <local:ServerTypeConverter x:Key="ServerTypeConverter"/>
+            </ListView.Resources>
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="Foreground" Value="Black"/>
+                </Style>
+            </ListView.ItemContainerStyle>
             <ListView.View>
                 <GridView>
-                    <!--<GridViewColumn Width="20" />-->
-                    <GridViewColumn Header="Server Type" Width="70" DisplayMemberBinding="{Binding Path=configType}"/>
+                    <GridViewColumn Header="Server Type" Width="70" DisplayMemberBinding="{Binding Path=configType, Converter={StaticResource ServerTypeConverter}}"/>
                     <GridViewColumn Header="Alias" Width="100" DisplayMemberBinding="{Binding Path=remarks}"/>
                     <GridViewColumn Header="Address" Width="100" DisplayMemberBinding="{Binding Path=address}"/>
                     <GridViewColumn Header="Port" Width="40" DisplayMemberBinding="{Binding Path=port}"/>
-                    <GridViewColumn Header="Encryption" Width="80" DisplayMemberBinding="{Binding Path=security}"/>
+                    <GridViewColumn Header="Encryption" Width="90" DisplayMemberBinding="{Binding Path=security}"/>
                     <GridViewColumn Header="Protocol" Width="55" DisplayMemberBinding="{Binding Path=network}"/>
-                    <!--<GridViewColumn Header="Test Result" Width="70"/>-->
                 </GridView>
             </ListView.View>
         </ListView>
-        <tb:TaskbarIcon Name="NotifyIcon" IconSource="v2ray.ico" TrayContextMenuOpen="NotifyIcon_TrayContextMenuOpen" TrayMouseDoubleClick="NotifyIcon_TrayMouseDoubleClick">
+        <tb:TaskbarIcon Name="NotifyIcon" IconSource="icon.ico" TrayContextMenuOpen="NotifyIcon_TrayContextMenuOpen" TrayMouseDoubleClick="NotifyIcon_TrayMouseDoubleClick">
             <tb:TaskbarIcon.ContextMenu>
                 <ContextMenu>
                     <MenuItem Name="SystemProxyMenuToggle" Header="Enable System Proxy" IsCheckable="True" Click="SystemProxyMenuToggle_Click"/>

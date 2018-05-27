@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:v2rayNPF"
         mc:Ignorable="d"
-        Title="Shadowsocks Server" Height="450" Width="600" Background="#FFBBBBBB" Icon="v2ray.ico" ResizeMode="NoResize" ShowInTaskbar="False" WindowStartupLocation="CenterOwner" Topmost="True" SizeToContent="Height">
+        Title="Shadowsocks Server" Height="450" Width="600" Background="#FFBBBBBB" Icon="icon.ico" ResizeMode="NoResize" ShowInTaskbar="False" WindowStartupLocation="CenterOwner" Topmost="True" SizeToContent="Height">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>

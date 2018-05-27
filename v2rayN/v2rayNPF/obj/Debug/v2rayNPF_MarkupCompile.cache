@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\DL444\source\repos\v2rayN\v2rayN\v2rayNPF\App.xaml
-41539379707
+51232600414
 
-39-2144708811
+361898894139
 24208499231
-AddShadowsocksWindow.xaml;AddVMessWindow.xaml;MainWindow.xaml;SettingsWindow.xaml;
+AddShadowsocksWindow.xaml;AddVMessWindow.xaml;EditCustomServerWindow.xaml;MainWindow.xaml;SettingsWindow.xaml;
 
-True
+False
 

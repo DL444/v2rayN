@@ -87,7 +87,7 @@ namespace v2rayNPF.Handler
         /// </summary>
         private void V2rayStart()
         {
-            ShowMsg(false, string.Format("启动服务({0})......", DateTime.Now.ToString()));
+            ShowMsg(false, string.Format("Starting service ({0})......", DateTime.Now.ToString()));
 
             try
             {
@@ -105,7 +105,7 @@ namespace v2rayNPF.Handler
                 }
                 if (Utils.IsNullOrEmpty(fileName))
                 {
-                    string msg = "未找到v2ray文件";
+                    string msg = "V2Ray Core file not found.";
                     ShowMsg(true, msg);
                     return;
                 }
@@ -118,7 +118,7 @@ namespace v2rayNPF.Handler
                 p.OutputDataReceived += new DataReceivedEventHandler((sender, e) =>
                 {
                     if (!String.IsNullOrEmpty(e.Data)
-                        && e.Data.ToLower().Contains("v2ray"))
+                        /*&& e.Data.ToLower().Contains("v2ray")*/)
                     {
                         string msg = e.Data + Environment.NewLine;
                         ShowMsg(false, msg);
@@ -130,7 +130,7 @@ namespace v2rayNPF.Handler
             catch (Exception ex)
             {
                 Utils.SaveLog(ex.Message, ex);
-                string msg = "未找到v2ray文件...";
+                string msg = "V2Ray Core file not found.";
                 ShowMsg(true, msg);
             }
         }
@@ -142,10 +142,7 @@ namespace v2rayNPF.Handler
         /// <param name="msg"></param>
         private void ShowMsg(bool notify, string msg)
         {
-            if (ProcessEvent != null)
-            {
-                ProcessEvent(notify, msg);
-            }
+            ProcessEvent?.Invoke(notify, msg);
         }
     }
 }

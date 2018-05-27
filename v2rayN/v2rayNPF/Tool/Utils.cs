@@ -379,7 +379,8 @@ namespace v2rayNPF
         /// <returns></returns>
         public static string GetPath(string fileName)
         {
-            string StartupPath = "";// Application.StartupPath;
+            string StartupPath = System.AppDomain.CurrentDomain.BaseDirectory;
+
             if (Utils.IsNullOrEmpty(fileName))
             {
                 return StartupPath;
@@ -550,9 +551,9 @@ namespace v2rayNPF
         {
             if (_tempPath == null)
             {
-                //Directory.CreateDirectory(Path.Combine(Application.StartupPath, "v2ray_win_temp"));
+                Directory.CreateDirectory(Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "v2ray_win_temp"));
                 // don't use "/", it will fail when we call explorer /select xxx/ss_win_temp\xxx.log
-                //_tempPath = Path.Combine(Application.StartupPath, "v2ray_win_temp");
+                _tempPath = Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "v2ray_win_temp");
             }
             return _tempPath;
         }

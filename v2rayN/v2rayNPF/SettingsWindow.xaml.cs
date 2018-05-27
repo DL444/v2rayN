@@ -98,7 +98,7 @@ namespace v2rayNPF
             SystemStartupToggle.IsChecked = autoRun;
             GetKcp();
 
-            if (item.inbound == null || item.inbound.Count > 0)
+            if (item.inbound == null || item.inbound.Count == 0)
             {
                 item.inbound = new List<InItem>
                 {
