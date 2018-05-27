@@ -35,11 +35,11 @@ namespace v2rayNPF.Handler
                     || config.index > config.vmess.Count - 1
                     )
                 {
-                    msg = "请先检查服务器设置";
+                    msg = "Please check your server configuration.";
                     return -1;
                 }
 
-                msg = "初始化配置";
+                msg = "Initializing configuration...";
                 if (config.configType() == (int)EConfigType.Custom)
                 {
                     return GenerateClientCustomConfig(config, fileName, out msg);
@@ -49,7 +49,7 @@ namespace v2rayNPF.Handler
                 string result = Utils.GetEmbedText(SampleClient);
                 if (Utils.IsNullOrEmpty(result))
                 {
-                    msg = "取得默认配置失败";
+                    msg = "Failure retrieving configuration template.";
                     return -1;
                 }
 
@@ -57,7 +57,7 @@ namespace v2rayNPF.Handler
                 V2rayConfig v2rayConfig = Utils.FromJson<V2rayConfig>(result);
                 if (v2rayConfig == null)
                 {
-                    msg = "生成默认配置文件失败";
+                    msg = "Failure generating configuration template file.";
                     return -1;
                 }
 
@@ -81,11 +81,11 @@ namespace v2rayNPF.Handler
 
                 Utils.ToJsonFile(v2rayConfig, fileName);
 
-                msg = string.Format("配置成功 \r\n{0}", config.getSummary());
+                msg = string.Format("Configuration success. \r\n{0}", config.getSummary());
             }
             catch
             {
-                msg = "异常，生成默认配置文件失败";
+                msg = "Default configuration file failed to generate due to an exception.";
                 return -1;
             }
             return 0;
@@ -564,7 +564,7 @@ namespace v2rayNPF.Handler
                     || config.index > config.vmess.Count - 1
                     )
                 {
-                    msg = "请先检查服务器设置";
+                    msg = "Please check your server configuration.";
                     return -1;
                 }
 
@@ -575,11 +575,11 @@ namespace v2rayNPF.Handler
                 }
                 File.Copy(addressFileName, fileName);
 
-                msg = string.Format("配置成功 \r\n{0}", config.getSummary());
+                msg = string.Format("Configuration success. \r\n{0}", config.getSummary());
             }
             catch
             {
-                msg = "异常，生成默认配置文件失败";
+                msg = "Default configuration file failed to generate due to an exception.";
                 return -1;
             }
             return 0;
@@ -609,17 +609,17 @@ namespace v2rayNPF.Handler
                     || config.index > config.vmess.Count - 1
                     )
                 {
-                    msg = "请先检查服务器设置";
+                    msg = "Please check your server configuration.";
                     return -1;
                 }
 
-                msg = "初始化配置";
+                msg = "Initializing configuration...";
 
                 //取得默认配置
                 string result = Utils.GetEmbedText(SampleServer);
                 if (Utils.IsNullOrEmpty(result))
                 {
-                    msg = "取得默认配置失败";
+                    msg = "Failure retrieving configuration template.";
                     return -1;
                 }
 
@@ -627,7 +627,7 @@ namespace v2rayNPF.Handler
                 V2rayConfig v2rayConfig = Utils.FromJson<V2rayConfig>(result);
                 if (v2rayConfig == null)
                 {
-                    msg = "生成默认配置文件失败";
+                    msg = "Failure generating configuration template file.";
                     return -1;
                 }
 
@@ -642,11 +642,11 @@ namespace v2rayNPF.Handler
 
                 Utils.ToJsonFile(v2rayConfig, fileName);
 
-                msg = string.Format("配置成功 \r\n{0}", config.getSummary());
+                msg = string.Format("Configuration success. \r\n{0}", config.getSummary());
             }
             catch
             {
-                msg = "异常，生成默认配置文件失败";
+                msg = "Default configuration file failed to generate due to an exception.";
                 return -1;
             }
             return 0;
@@ -735,7 +735,7 @@ namespace v2rayNPF.Handler
                 string result = Utils.LoadResource(fileName);
                 if (Utils.IsNullOrEmpty(result))
                 {
-                    msg = "读取配置文件失败";
+                    msg = "Configuration file reading failed.";
                     return null;
                 }
 
@@ -743,7 +743,7 @@ namespace v2rayNPF.Handler
                 V2rayConfig v2rayConfig = Utils.FromJson<V2rayConfig>(result);
                 if (v2rayConfig == null)
                 {
-                    msg = "转换配置文件失败";
+                    msg = "Configuration file conversion failed.";
                     return null;
                 }
 
@@ -756,7 +756,7 @@ namespace v2rayNPF.Handler
                     || v2rayConfig.outbound.settings.vnext[0].users == null
                     || v2rayConfig.outbound.settings.vnext[0].users.Count <= 0)
                 {
-                    msg = "不是正确的客户端配置文件，请检查";
+                    msg = "Invalid client configuration file.";
                     return null;
                 }
 
@@ -842,7 +842,7 @@ namespace v2rayNPF.Handler
             }
             catch
             {
-                msg = "异常，不是正确的客户端配置文件，请检查";
+                msg = "Exception: Invalid client configuration file.";
                 return null;
             }
 
@@ -866,7 +866,7 @@ namespace v2rayNPF.Handler
                 string result = Utils.LoadResource(fileName);
                 if (Utils.IsNullOrEmpty(result))
                 {
-                    msg = "读取配置文件失败";
+                    msg = "Configuration file reading failed.";
                     return null;
                 }
 
@@ -874,7 +874,7 @@ namespace v2rayNPF.Handler
                 V2rayConfig v2rayConfig = Utils.FromJson<V2rayConfig>(result);
                 if (v2rayConfig == null)
                 {
-                    msg = "转换配置文件失败";
+                    msg = "Configuration file conversion failed.";
                     return null;
                 }
 
@@ -885,7 +885,7 @@ namespace v2rayNPF.Handler
                     || v2rayConfig.inbound.settings.clients == null
                     || v2rayConfig.inbound.settings.clients.Count <= 0)
                 {
-                    msg = "不是正确的服务端配置文件，请检查";
+                    msg = "Invalid server configuration file.";
                     return null;
                 }
 
@@ -971,7 +971,7 @@ namespace v2rayNPF.Handler
             }
             catch
             {
-                msg = "异常，不是正确的客户端配置文件，请检查";
+                msg = "Exception: Invalid server configuration file.";
                 return null;
             }
             return vmessItem;
@@ -994,7 +994,7 @@ namespace v2rayNPF.Handler
                 string result = clipboardData;// Utils.GetClipboardData();
                 if (Utils.IsNullOrEmpty(result))
                 {
-                    msg = "读取配置文件失败";
+                    msg = "Configuration reading failed.";
                     return null;
                 }
 
@@ -1008,7 +1008,7 @@ namespace v2rayNPF.Handler
                     VmessQRCode vmessQRCode = Utils.FromJson<VmessQRCode>(result);
                     if (vmessQRCode == null)
                     {
-                        msg = "转换配置文件失败";
+                        msg = "Configuration conversion failed.";
                         return null;
                     }
                     vmessItem.security = Global.DefaultSecurity;
@@ -1031,7 +1031,7 @@ namespace v2rayNPF.Handler
                 }
                 else if (result.StartsWith(Global.ssProtocol))
                 {
-                    msg = "配置格式不正确";
+                    msg = "Invalid configuration format.";
 
                     vmessItem.configType = (int)EConfigType.Shadowsocks;
                     result = result.Substring(Global.ssProtocol.Length);
@@ -1060,13 +1060,13 @@ namespace v2rayNPF.Handler
                 }
                 else
                 {
-                    msg = "非vmess或ss协议";
+                    msg = "Not VMess or Shadowsocks protocol.";
                     return null;
                 }
             }
             catch
             {
-                msg = "异常，不是正确的配置，请检查";
+                msg = "Exception: Invalid configuration format.";
                 return null;
             }
 

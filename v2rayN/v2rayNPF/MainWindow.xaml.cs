@@ -17,14 +17,16 @@ using v2rayNPF.HttpProxyHandler;
 using v2rayNPF.Mode;
 using System.Collections.ObjectModel;
 using Microsoft.Win32;
+using System.ComponentModel;
 
 namespace v2rayNPF.Forms
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : Window//, INotifyPropertyChanged
     {
+        //public event PropertyChangedEventHandler PropertyChanged;
         protected Config config;// = new Config();
 
         public static ObservableCollection<VmessItem> vmessItems { get; private set; } = new ObservableCollection<VmessItem>();
@@ -33,6 +35,9 @@ namespace v2rayNPF.Forms
         PACListHandle PACListHandle;
         V2rayUpdateHandle v2RayUpdateHandle;
 
+        ContextMenu serverItemContextMenu;
+
+
         public MainWindow()
         {
             InitializeComponent();
@@ -40,6 +45,45 @@ namespace v2rayNPF.Forms
             // TODO: Uncomment this.
             //this.WindowState = WindowState.Minimized;
             Application.Current.Exit += (sender, args) => { Utils.ClearTempPath(); };
+            serverItemContextMenu = CreateServerItemContextMenu();
+        }
+
+        ContextMenu CreateServerItemContextMenu()
+        {
+            ContextMenu menu = new ContextMenu();
+            MenuItem removeItem = new MenuItem() { Header = "Remove" };
+            removeItem.Click += RemoveServerMenuItem_Click;
+            MenuItem copyItem = new MenuItem() { Header = "Duplicate" };
+            copyItem.Click += CopyServerMenuItem_Click;
+            MenuItem activateItem = new MenuItem() { Header = "Activate" };
+            activateItem.Click += ActivateServerMenuItem_Click;
+
+            MenuItem moveTopItem = new MenuItem() { Header = "Move to Top" };
+            moveTopItem.Click += MoveToTopMenuItem_Click;
+            MenuItem moveUpItem = new MenuItem() { Header = "Move Up" };
+            moveUpItem.Click += MoveUpMenuItem_Click;
+            MenuItem moveDownItem = new MenuItem() { Header = "Move Down" };
+            moveDownItem.Click += MoveDownMenuItem_Click;
+            MenuItem moveBottomItem = new MenuItem() { Header = "Move to Bottom" };
+            moveBottomItem.Click += MoveToBottomMenuItem_Click;
+
+            MenuItem exportClientItem = new MenuItem() { Header = "Export as Client" };
+            exportClientItem.Click += ExportAsClientMenuItem_Click;
+            MenuItem exportServerItem = new MenuItem() { Header = "Export as Server" };
+            exportServerItem.Click += ExportAsServerMenuItem_Click;
+
+            menu.Items.Add(removeItem);
+            menu.Items.Add(copyItem);
+            menu.Items.Add(activateItem);
+            menu.Items.Add(new Separator());
+            menu.Items.Add(moveTopItem);
+            menu.Items.Add(moveUpItem);
+            menu.Items.Add(moveDownItem);
+            menu.Items.Add(moveBottomItem);
+            menu.Items.Add(new Separator());
+            menu.Items.Add(exportClientItem);
+            menu.Items.Add(exportServerItem);
+            return menu;
         }
 
         private void MainWin_Loaded(object sender, RoutedEventArgs e)
@@ -47,6 +91,8 @@ namespace v2rayNPF.Forms
             ////ConfigHandler 
             ConfigHandler.LoadConfig(ref config);
             v2RayHandler.ProcessEvent += V2RayHandler_ProcessEvent;
+            RefreshServers();
+            LoadV2ray(false);
         }
 
         private void MainWin_Closing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -110,8 +156,76 @@ namespace v2rayNPF.Forms
         {
             vmessItems = new ObservableCollection<VmessItem>(config.vmess);
             ServerBox.ItemsSource = vmessItems;
+            ServerBox.UpdateLayout();
+            for (int i = 0; i < ServerBox.Items.Count; i++)
+            {
+                ListViewItem serverItem = (ServerBox.ItemContainerGenerator.ContainerFromIndex(i) as ListViewItem);
+                if (i == config.index)
+                {
+                    serverItem.FontWeight = FontWeights.Bold;
+                }
+                else
+                {
+                    serverItem.FontWeight = FontWeights.Regular;
+                }
+                serverItem.MouseDoubleClick += ServerItem_MouseDoubleClick;
+                serverItem.KeyDown += ServerItem_KeyDown;
+                serverItem.ContextMenu = serverItemContextMenu;
+            }
         }
 
+        private void ServerItem_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.Key)
+            {
+                case Key.Enter:
+                    ActivateServerMenuItem_Click(null, null);
+                    break;
+                case Key.Delete:
+                    RemoveServerMenuItem_Click(null, null);
+                    break;
+                case Key.U:
+                    MoveUpMenuItem_Click(null, null);
+                    break;
+                case Key.D:
+                    MoveDownMenuItem_Click(null, null);
+                    break;
+            }
+        }
+
+        private void ServerItem_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            int index = GetSelection();
+            bool? confirmed = true;
+            if (index < 0)
+            {
+                return;
+            }
+            VmessItem server = config.vmess[index];
+
+            if (config.vmess[index].configType == (int)EConfigType.Vmess)
+            {
+                AddVMessWindow fm = new AddVMessWindow();
+                confirmed = fm.ShowDialog(ref server);
+            }
+            else if (config.vmess[index].configType == (int)EConfigType.Shadowsocks)
+            {
+                AddShadowsocksWindow fm = new AddShadowsocksWindow();
+                confirmed = fm.ShowDialog(ref server);
+            }
+            else
+            {
+                EditCustomServerWindow fm = new EditCustomServerWindow();
+                confirmed = fm.ShowDialog(ref server);
+            }
+            if (confirmed == true)
+            {
+                config.vmess[index] = server;
+                RefreshServers();
+                LoadV2ray(true);
+                ConfigHandler.ToJsonFile(config);
+            }
+        }
 
         void LoadV2ray(bool isReload)
         {
@@ -222,7 +336,7 @@ namespace v2rayNPF.Forms
             if(ConfigHandler.MoveServer(ref config, index, direction) == 0)
             {
                 RefreshServers();
-                LoadV2ray(false);
+                LoadV2ray(true);
             }
         }
         private void MoveToTopMenuItem_Click(object sender, RoutedEventArgs e)
@@ -252,8 +366,11 @@ namespace v2rayNPF.Forms
         }
         void AppendConsole(string text)
         {
-            OutputBox.AppendText(text);
-            if(!text.EndsWith("\r\n")) { OutputBox.AppendText("\r\n"); }
+            this.Dispatcher.Invoke(() =>
+            {
+                OutputBox.AppendText(text);
+                if (!text.EndsWith("\r\n")) { OutputBox.AppendText("\r\n"); }
+            });
         }
         void ClearConsole()
         {
@@ -342,6 +459,8 @@ namespace v2rayNPF.Forms
             int index = -1;
             if ((index = ServerBox.SelectedIndex) < 0) { return; }
             ConfigHandler.SetDefaultServer(ref config, ServerBox.SelectedIndex);
+            RefreshServers();
+            LoadV2ray(true);
         }
 
         private void ExportAsClientMenuItem_Click(object sender, RoutedEventArgs e)
@@ -529,5 +648,95 @@ namespace v2rayNPF.Forms
             CloseV2Ray();
             Application.Current.Shutdown();
         }
+
+        private void ImportFromClipMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            string clipboardData = Utils.GetClipboardData();
+            if (Utils.IsNullOrEmpty(clipboardData))
+            {
+                return;
+            }
+            int countServers = 0;
+            string[] arrData = clipboardData.Split(new string[] { "\r\n" }, StringSplitOptions.None);
+            foreach (string str in arrData)
+            {
+                string msg;
+                VmessItem vmessItem = V2rayConfigHandler.ImportFromClipboardConfig(str, out msg);
+                if (vmessItem == null)
+                {
+                    continue;
+                }
+                if (vmessItem.configType == (int)EConfigType.Vmess)
+                {
+                    if (ConfigHandler.AddServer(ref config, vmessItem, -1) == 0)
+                    {
+                        countServers++;
+                    }
+                }
+                else if (vmessItem.configType == (int)EConfigType.Shadowsocks)
+                {
+                    if (ConfigHandler.AddShadowsocksServer(ref config, vmessItem, -1) == 0)
+                    {
+                        countServers++;
+                    }
+                }
+            }
+            if (countServers > 0)
+            {
+                RefreshServers();
+                //MessageBox.Show("Import Success.", "V2RayNPF", MessageBoxButton.OK);
+            }
+        }
+
+        private void AddCustomServerMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            fileDialog.Multiselect = false;
+            fileDialog.Filter = "Config|*.json";
+            if (fileDialog.ShowDialog() != true)
+            {
+                return;
+            }
+            string fileName = fileDialog.FileName;
+            if (Utils.IsNullOrEmpty(fileName))
+            {
+                return;
+            }
+
+            if (ConfigHandler.AddCustomServer(ref config, fileName) == 0)
+            {
+                RefreshServers();
+                LoadV2ray(true);
+            }
+            else
+            {
+                MessageBox.Show(string.Format("Failed to import custom configuraion."));
+            }
+        }
     }
+
+    [ValueConversion(typeof(int), typeof(string))]
+    public class ServerTypeConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            switch ((int)value)
+            {
+                case 1:
+                    return "VMess";
+                case 2:
+                    return "Custom";
+                case 3:
+                    return "Shadowsocks";
+                default:
+                    return "";
+            }
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            return null;
+        }
+    }
+
 }

@@ -8,12 +8,31 @@
   ],
   "logEnabled": false,
   "loglevel": "warning",
-  "index": -1,
-  "vmess": [],
+  "index": 0,
+  "vmess": [
+    {
+      "configVersion": 2,
+      "address": "207.246.84.42",
+      "port": 443,
+      "id": "3d34555a-267a-46ac-ad77-404c5cb21cbb",
+      "alterId": 64,
+      "security": "aes-128-cfb",
+      "network": "tcp",
+      "remarks": "Vultr",
+      "headerType": "none",
+      "requestHost": "",
+      "path": "",
+      "streamSecurity": "",
+      "configType": 1
+    }
+  ],
   "muxEnabled": true,
-  "chinasites": false,
+  "chinasites": true,
   "chinaip": false,
-  "useragent": [],
+  "useragent": [
+    "*.hulu.com",
+    " fontsgeek.com"
+  ],
   "userdirect": [],
   "userblock": [],
   "kcpItem": {
@@ -27,8 +46,8 @@
   },
   "autoSyncTime": false,
   "sysAgentEnabled": false,
-  "listenerType": 0,
-  "urlGFWList": null,
+  "listenerType": 1,
+  "urlGFWList": "",
   "allowLANConn": false,
-  "remoteDNS": null
+  "remoteDNS": ""
 }

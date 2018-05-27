@@ -1,0 +1,29 @@
+﻿<Window x:Class="v2rayNPF.EditCustomServerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:v2rayNPF"
+        mc:Ignorable="d"
+        Title="Edit Display Name" Height="200" Width="400" Background="#FFBBBBBB" Icon="icon.ico" ResizeMode="NoResize" ShowInTaskbar="False" WindowStartupLocation="CenterOwner" Topmost="True" SizeToContent="Height" >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid Margin="20,30,10.286,10.429" Grid.RowSpan="1
+              ">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Display Name (remarks)" VerticalAlignment="Center"/>
+            <TextBox x:Name="AliasBox" Text="" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" Height="23"/>
+        </Grid>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" Margin="0,0,0,0">
+            <Button Name="OkBtn" Content="OK" Width="75" Margin="20,0,0,30" Click="OkBtn_Click"/>
+            <Button Name="CancelBtn" Content="Cancel" Width="75" Margin="10,0,0,30" Click="CancelBtn_Click"/>
+        </StackPanel>
+
+    </Grid>
+</Window>

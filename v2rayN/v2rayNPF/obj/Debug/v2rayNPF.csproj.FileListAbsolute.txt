@@ -14,7 +14,6 @@ C:\Users\DL444\source\repos\v2rayN\v2rayN\v2rayNPF\obj\Debug\v2rayNPF.csproj.Cor
 C:\Users\DL444\source\repos\v2rayN\v2rayN\v2rayNPF\obj\Debug\v2rayNPF.csproj.CopyComplete
 C:\Users\DL444\source\repos\v2rayN\v2rayN\v2rayNPF\obj\Debug\v2rayNPF.exe
 C:\Users\DL444\source\repos\v2rayN\v2rayN\v2rayNPF\obj\Debug\v2rayNPF.pdb
-C:\Users\DL444\source\repos\v2rayN\v2rayN\v2rayNPF\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\DL444\source\repos\v2rayN\v2rayN\v2rayNPF\bin\Debug\Newtonsoft.Json.dll
 C:\Users\DL444\source\repos\v2rayN\v2rayN\v2rayNPF\bin\Debug\zxing.dll
 C:\Users\DL444\source\repos\v2rayN\v2rayN\v2rayNPF\bin\Debug\zxing.presentation.dll
@@ -29,3 +28,6 @@ C:\Users\DL444\source\repos\v2rayN\v2rayN\v2rayNPF\obj\Debug\AddShadowsocksWindo
 C:\Users\DL444\source\repos\v2rayN\v2rayN\v2rayNPF\obj\Debug\AddShadowsocksWindow.baml
 C:\Users\DL444\source\repos\v2rayN\v2rayN\v2rayNPF\obj\Debug\SettingsWindow.baml
 C:\Users\DL444\source\repos\v2rayN\v2rayN\v2rayNPF\obj\Debug\SettingsWindow.g.cs
+C:\Users\DL444\source\repos\v2rayN\v2rayN\v2rayNPF\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\DL444\source\repos\v2rayN\v2rayN\v2rayNPF\obj\Debug\EditCustomServerWindow.g.cs
+C:\Users\DL444\source\repos\v2rayN\v2rayN\v2rayNPF\obj\Debug\EditCustomServerWindow.baml

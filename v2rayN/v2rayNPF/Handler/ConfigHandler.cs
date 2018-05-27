@@ -229,7 +229,7 @@ namespace v2rayNPF.Handler
             vmessItem.requestHost = config.vmess[index].requestHost;
             vmessItem.path = config.vmess[index].path;
             vmessItem.streamSecurity = config.vmess[index].streamSecurity;
-            vmessItem.remarks = string.Format("{0}-副本", config.vmess[index].remarks);
+            vmessItem.remarks = string.Format("{0} - Copy", config.vmess[index].remarks);
 
             config.vmess.Add(vmessItem);
 
