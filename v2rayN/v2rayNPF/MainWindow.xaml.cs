@@ -43,7 +43,7 @@ namespace v2rayNPF.Forms
             InitializeComponent();
             this.ShowInTaskbar = false;
             // TODO: Uncomment this.
-            //this.WindowState = WindowState.Minimized;
+            this.WindowState = WindowState.Minimized;
             Application.Current.Exit += (sender, args) => { Utils.ClearTempPath(); };
             serverItemContextMenu = CreateServerItemContextMenu();
         }

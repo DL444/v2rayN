@@ -31,3 +31,6 @@ C:\Users\DL444\source\repos\v2rayN\v2rayN\v2rayNPF\obj\Debug\SettingsWindow.g.cs
 C:\Users\DL444\source\repos\v2rayN\v2rayN\v2rayNPF\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\DL444\source\repos\v2rayN\v2rayN\v2rayNPF\obj\Debug\EditCustomServerWindow.g.cs
 C:\Users\DL444\source\repos\v2rayN\v2rayN\v2rayNPF\obj\Debug\EditCustomServerWindow.baml
+C:\Users\DL444\source\repos\v2rayN\v2rayN\v2rayNPF\bin\Debug\zh-CN\v2rayNPF.resources.dll
+C:\Users\DL444\source\repos\v2rayN\v2rayN\v2rayNPF\obj\Debug\v2rayNPF.Properties.Resources.zh-CN.resources
+C:\Users\DL444\source\repos\v2rayN\v2rayN\v2rayNPF\obj\Debug\zh-CN\v2rayNPF.resources.dll

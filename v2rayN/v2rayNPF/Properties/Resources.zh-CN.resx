@@ -117,287 +117,250 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="abp_js" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\abp.js.gz;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="ActivateServerMenu" xml:space="preserve">
-    <value>Activate Server</value>
+    <value>激活服务器配置</value>
   </data>
   <data name="AddCustomMenu" xml:space="preserve">
-    <value>Add Custom Server...</value>
+    <value>添加自定义服务器配置...</value>
   </data>
   <data name="AddressHeader" xml:space="preserve">
-    <value>Address</value>
+    <value>地址</value>
   </data>
   <data name="AddServerAddress" xml:space="preserve">
-    <value>Address (address)</value>
+    <value>地址 (address)</value>
   </data>
   <data name="AddServerAlias" xml:space="preserve">
-    <value>Display Name (remarks)</value>
+    <value>显示名称 (remarks)</value>
   </data>
   <data name="AddServerAlterId" xml:space="preserve">
-    <value>Alter ID (alterID)</value>
+    <value>浮动 ID (alterID)</value>
   </data>
   <data name="AddServerEncryption" xml:space="preserve">
-    <value>Encryption (security)</value>
+    <value>加密 (security)</value>
   </data>
   <data name="AddServerNetwork" xml:space="preserve">
-    <value>Network (network)</value>
+    <value>网络 (network)</value>
   </data>
   <data name="AddServerPort" xml:space="preserve">
-    <value>Port (port)</value>
+    <value>端口 (port)</value>
   </data>
   <data name="AddServerUrlMenu" xml:space="preserve">
-    <value>Import URL from Clipboard</value>
+    <value>从剪贴板导入 URL</value>
   </data>
   <data name="AddServerUserId" xml:space="preserve">
-    <value>User ID (id)</value>
+    <value>用户 ID (id)</value>
   </data>
   <data name="AddSSAddress" xml:space="preserve">
-    <value>Address</value>
+    <value>地址</value>
   </data>
   <data name="AddSSAlias" xml:space="preserve">
-    <value>Display Name</value>
+    <value>显示名称</value>
   </data>
   <data name="AddSSEncryption" xml:space="preserve">
-    <value>Encryption</value>
+    <value>加密</value>
   </data>
   <data name="AddSSMenu" xml:space="preserve">
-    <value>Add Shadowsocks Server...</value>
+    <value>添加 Shadowsocks 服务器...</value>
   </data>
   <data name="AddSSPassword" xml:space="preserve">
-    <value>Password</value>
+    <value>密码</value>
   </data>
   <data name="AddSSPort" xml:space="preserve">
-    <value>Port</value>
+    <value>端口</value>
   </data>
   <data name="AddVMessMenu" xml:space="preserve">
-    <value>Add VMess Server...</value>
+    <value>添加 VMess 服务器...</value>
   </data>
   <data name="AliasHeader" xml:space="preserve">
-    <value>Display Name</value>
+    <value>显示名称</value>
   </data>
   <data name="AppSettingsTab" xml:space="preserve">
     <value>V2RayNPF</value>
   </data>
   <data name="BasicSettingsTab" xml:space="preserve">
-    <value>Core: Basics</value>
+    <value>Core: 基本设置</value>
   </data>
   <data name="CancelBtn" xml:space="preserve">
-    <value>Cancel</value>
-  </data>
-  <data name="checkupdate" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\checkupdate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>取消</value>
   </data>
   <data name="CopyBtn" xml:space="preserve">
-    <value>Copy</value>
+    <value>复制</value>
   </data>
   <data name="CopyPacMenu" xml:space="preserve">
-    <value>Copy local PAC address</value>
+    <value>复制本地 PAC 地址</value>
   </data>
   <data name="CopyServerMenu" xml:space="preserve">
-    <value>Duplicate</value>
+    <value>复制服务器配置</value>
   </data>
   <data name="DisplaySharingInfo" xml:space="preserve">
-    <value>Show Sharing Info</value>
+    <value>显示共享信息</value>
   </data>
   <data name="EditCustomAliasWindow" xml:space="preserve">
-    <value>Edit Display Name</value>
+    <value>更改显示名称</value>
   </data>
   <data name="EnableProxyMenu" xml:space="preserve">
-    <value>Enable System Proxy</value>
+    <value>启用系统代理</value>
   </data>
   <data name="EncryptionHeader" xml:space="preserve">
-    <value>Encryption</value>
+    <value>加密</value>
   </data>
   <data name="ExitMenu" xml:space="preserve">
-    <value>Exit</value>
+    <value>退出</value>
   </data>
   <data name="ExportClientMenu" xml:space="preserve">
-    <value>Export as Client...</value>
+    <value>导出为客户端配置...</value>
   </data>
   <data name="ExportServerMenu" xml:space="preserve">
-    <value>Export as Server...</value>
+    <value>导出为服务器配置...</value>
   </data>
   <data name="ExportToClipMenu" xml:space="preserve">
-    <value>Export All to Clipboard</value>
+    <value>导出全部至剪贴板</value>
   </data>
   <data name="GenerateGuidBtn" xml:space="preserve">
-    <value>Generate</value>
+    <value>生成</value>
   </data>
   <data name="GlobalModeMenu" xml:space="preserve">
-    <value>Global</value>
+    <value>全局</value>
   </data>
   <data name="ImportClientMenu" xml:space="preserve">
-    <value>Import Client Configuration...</value>
+    <value>导入客户端配置文件...</value>
   </data>
   <data name="ImportConfigMenu" xml:space="preserve">
-    <value>Import Config File</value>
+    <value>导入配置文件</value>
   </data>
   <data name="ImportFromClipMenu" xml:space="preserve">
-    <value>Import from Clipboard</value>
+    <value>从剪贴板中导入</value>
   </data>
   <data name="ImportServerMenu" xml:space="preserve">
-    <value>Import Server Configuration...</value>
+    <value>导入服务器配置文件...</value>
   </data>
   <data name="KcpSettingsTab" xml:space="preserve">
     <value>Core: KCP</value>
   </data>
   <data name="KeepCurrentModeMenu" xml:space="preserve">
-    <value>Keep current mode unchanged</value>
-  </data>
-  <data name="mgwz_dll" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\mgwz.dll.gz;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="minimize" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\minimize.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>保持当前模式</value>
   </data>
   <data name="MinimizeMainMenu" xml:space="preserve">
-    <value>Minimize</value>
+    <value>最小化</value>
   </data>
   <data name="MoveBottomMenu" xml:space="preserve">
-    <value>Move to Bottom</value>
+    <value>移至底端</value>
   </data>
   <data name="MoveDownMenu" xml:space="preserve">
-    <value>Move Down</value>
+    <value>下移</value>
   </data>
   <data name="MoveTopMenu" xml:space="preserve">
-    <value>Move to Top</value>
+    <value>移至顶端</value>
   </data>
   <data name="MoveUpMenu" xml:space="preserve">
-    <value>Move Up</value>
+    <value>上移</value>
   </data>
   <data name="OKBtn" xml:space="preserve">
-    <value>OK</value>
-  </data>
-  <data name="option" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\option.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>确定</value>
   </data>
   <data name="PacModeMenu" xml:space="preserve">
     <value>PAC</value>
   </data>
-  <data name="pac_txt" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pac.txt.gz;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="PortHeader" xml:space="preserve">
-    <value>Port</value>
-  </data>
-  <data name="privoxy_conf" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\privoxy_conf.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
-  </data>
-  <data name="privoxy_exe" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\privoxy.exe.gz;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>端口</value>
   </data>
   <data name="ProtocolHeader" xml:space="preserve">
-    <value>Protocol</value>
+    <value>协议</value>
   </data>
   <data name="ProxyModeMenu" xml:space="preserve">
-    <value>System Proxy Mode</value>
+    <value>系统代理模式</value>
   </data>
   <data name="RemoveServerMenu" xml:space="preserve">
-    <value>Remove</value>
-  </data>
-  <data name="restart" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\restart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>删除服务器配置</value>
   </data>
   <data name="RestartMainMenu" xml:space="preserve">
-    <value>Restart</value>
+    <value>重新启动</value>
   </data>
   <data name="RoutingSettingsTab" xml:space="preserve">
-    <value>Core: Routing</value>
-  </data>
-  <data name="server" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\server.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>Core: 路由设置</value>
   </data>
   <data name="ServerListTrayMenu" xml:space="preserve">
-    <value>Servers</value>
+    <value>服务器</value>
   </data>
   <data name="ServerMainMenu" xml:space="preserve">
-    <value>Server</value>
+    <value>服务器</value>
   </data>
   <data name="ServerTypeHeader" xml:space="preserve">
-    <value>Server Type</value>
+    <value>类型</value>
   </data>
   <data name="SettingsAllowLan" xml:space="preserve">
-    <value>Allow connection from LAN</value>
+    <value>允许局域网连接</value>
   </data>
   <data name="SettingsBlockedRoutingTab" xml:space="preserve">
-    <value>Blocked</value>
+    <value>屏蔽</value>
   </data>
   <data name="SettingsBypassMainlandAddress" xml:space="preserve">
-    <value>Bypass mainland China addresses (Requires Core v2.46+)</value>
+    <value>绕过中国大陆地址 (需要 Core v2.46+)</value>
   </data>
   <data name="SettingsBypassMainlandIp" xml:space="preserve">
-    <value>Bypass mainland China IP (Requires Core v2.46+)</value>
+    <value>绕过中国大陆 IP (需要 Core v2.46+)</value>
   </data>
   <data name="SettingsCustomDns" xml:space="preserve">
-    <value>Custom DNS (Separated with Comma)</value>
+    <value>自定义 DNS (以逗号分隔)</value>
   </data>
   <data name="SettingsCustomGFWListAddress" xml:space="preserve">
-    <value>Custom GFWList Address (Leave blank if not needed)</value>
+    <value>自定义 GFWList 地址 (无需设置请留空)</value>
   </data>
   <data name="SettingsDirectRoutingTab" xml:space="preserve">
-    <value>Direct Connect</value>
+    <value>直连</value>
   </data>
   <data name="SettingsInbound1" xml:space="preserve">
-    <value>Local Listening Port 1</value>
+    <value>本地监听端口 1</value>
   </data>
   <data name="SettingsInbound2" xml:space="preserve">
-    <value>Local Listening Port 2</value>
+    <value>本地监听端口 2</value>
   </data>
   <data name="SettingsInboundProtocol" xml:space="preserve">
-    <value>Protocol</value>
+    <value>协议</value>
   </data>
   <data name="SettingsInboundUdp" xml:space="preserve">
-    <value>Enable UDP</value>
+    <value>启用 UDP</value>
   </data>
   <data name="SettingsLogging" xml:space="preserve">
-    <value>Enable Local Logging (Default: Off)</value>
+    <value>启用本地日志 (默认: 禁用)</value>
   </data>
   <data name="SettingsLogLevel" xml:space="preserve">
-    <value>Logging Level</value>
+    <value>日志级别</value>
   </data>
   <data name="SettingsMainMenu" xml:space="preserve">
-    <value>Settings</value>
+    <value>设置</value>
   </data>
   <data name="SettingsMuxMultiplex" xml:space="preserve">
-    <value>Enable Mux Multiplex (Default: On)</value>
+    <value>启用 Mux 多路复用 (默认: 启用)</value>
   </data>
   <data name="SettingsProxyRoutingTab" xml:space="preserve">
-    <value>Through Proxy</value>
+    <value>代理</value>
   </data>
   <data name="SettingsRoutingRulesLabel" xml:space="preserve">
-    <value>Custom routing rules separated with comma:</value>
+    <value>自定义路由规则 (以逗号分隔):</value>
   </data>
   <data name="SettingsSyncTime" xml:space="preserve">
-    <value>Sync local time on launch (May Fail)</value>
+    <value>启动时同步系统时钟 (可能失败)</value>
   </data>
   <data name="SettingsSystemProxyHintLn1" xml:space="preserve">
-    <value>* Enabling System Proxy:</value>
+    <value>* 启用系统代理:</value>
   </data>
   <data name="SettingsSystemProxyHintLn2" xml:space="preserve">
-    <value>Global Mode: Port = Socks Port + 1</value>
+    <value>全局模式: 端口 = Socks 端口 + 1</value>
   </data>
   <data name="SettingsSystemProxyHintLn3" xml:space="preserve">
-    <value>PAC Mode: Port = Socks Port + 2; Priority: PAC &gt; V2Ray Routing</value>
+    <value>PAC 模式: Port = Socks 端口 + 2; 优先级: PAC &gt; V2Ray 路由规则</value>
   </data>
   <data name="SettingsSystemStartup" xml:space="preserve">
-    <value>Launch on system startup (May Fail)</value>
+    <value>开机自动启动 (可能失败)</value>
   </data>
   <data name="SettingsWindow" xml:space="preserve">
-    <value>Settings</value>
+    <value>设置</value>
   </data>
   <data name="ShadowsocksWindow" xml:space="preserve">
-    <value>Shadowsocks Server</value>
-  </data>
-  <data name="sysproxy64_exe" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sysproxy64.exe.gz;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="sysproxy_exe" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sysproxy.exe.gz;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>Shadowsocks 服务器</value>
   </data>
   <data name="VMessWindow" xml:space="preserve">
-    <value>VMess Server</value>
+    <value>VMess 服务器</value>
   </data>
 </root>

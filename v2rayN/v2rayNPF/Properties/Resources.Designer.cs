@@ -22,7 +22,7 @@ namespace v2rayNPF.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace v2rayNPF.Properties {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("v2rayNPF.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace v2rayNPF.Properties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace v2rayNPF.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] abp_js {
+        public static byte[] abp_js {
             get {
                 object obj = ResourceManager.GetObject("abp_js", resourceCulture);
                 return ((byte[])(obj));
@@ -71,9 +71,207 @@ namespace v2rayNPF.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Activate Server.
+        /// </summary>
+        public static string ActivateServerMenu {
+            get {
+                return ResourceManager.GetString("ActivateServerMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add Custom Server....
+        /// </summary>
+        public static string AddCustomMenu {
+            get {
+                return ResourceManager.GetString("AddCustomMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Address.
+        /// </summary>
+        public static string AddressHeader {
+            get {
+                return ResourceManager.GetString("AddressHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Address (address).
+        /// </summary>
+        public static string AddServerAddress {
+            get {
+                return ResourceManager.GetString("AddServerAddress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Display Name (remarks).
+        /// </summary>
+        public static string AddServerAlias {
+            get {
+                return ResourceManager.GetString("AddServerAlias", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alter ID (alterID).
+        /// </summary>
+        public static string AddServerAlterId {
+            get {
+                return ResourceManager.GetString("AddServerAlterId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Encryption (security).
+        /// </summary>
+        public static string AddServerEncryption {
+            get {
+                return ResourceManager.GetString("AddServerEncryption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Network (network).
+        /// </summary>
+        public static string AddServerNetwork {
+            get {
+                return ResourceManager.GetString("AddServerNetwork", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Port (port).
+        /// </summary>
+        public static string AddServerPort {
+            get {
+                return ResourceManager.GetString("AddServerPort", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Import URL from Clipboard.
+        /// </summary>
+        public static string AddServerUrlMenu {
+            get {
+                return ResourceManager.GetString("AddServerUrlMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User ID (id).
+        /// </summary>
+        public static string AddServerUserId {
+            get {
+                return ResourceManager.GetString("AddServerUserId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Address.
+        /// </summary>
+        public static string AddSSAddress {
+            get {
+                return ResourceManager.GetString("AddSSAddress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Display Name.
+        /// </summary>
+        public static string AddSSAlias {
+            get {
+                return ResourceManager.GetString("AddSSAlias", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Encryption.
+        /// </summary>
+        public static string AddSSEncryption {
+            get {
+                return ResourceManager.GetString("AddSSEncryption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add Shadowsocks Server....
+        /// </summary>
+        public static string AddSSMenu {
+            get {
+                return ResourceManager.GetString("AddSSMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password.
+        /// </summary>
+        public static string AddSSPassword {
+            get {
+                return ResourceManager.GetString("AddSSPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Port.
+        /// </summary>
+        public static string AddSSPort {
+            get {
+                return ResourceManager.GetString("AddSSPort", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add VMess Server....
+        /// </summary>
+        public static string AddVMessMenu {
+            get {
+                return ResourceManager.GetString("AddVMessMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Display Name.
+        /// </summary>
+        public static string AliasHeader {
+            get {
+                return ResourceManager.GetString("AliasHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to V2RayNPF.
+        /// </summary>
+        public static string AppSettingsTab {
+            get {
+                return ResourceManager.GetString("AppSettingsTab", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Core: Basics.
+        /// </summary>
+        public static string BasicSettingsTab {
+            get {
+                return ResourceManager.GetString("BasicSettingsTab", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        public static string CancelBtn {
+            get {
+                return ResourceManager.GetString("CancelBtn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap checkupdate {
+        public static System.Drawing.Bitmap checkupdate {
             get {
                 object obj = ResourceManager.GetObject("checkupdate", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -81,9 +279,180 @@ namespace v2rayNPF.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Copy.
+        /// </summary>
+        public static string CopyBtn {
+            get {
+                return ResourceManager.GetString("CopyBtn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Copy local PAC address.
+        /// </summary>
+        public static string CopyPacMenu {
+            get {
+                return ResourceManager.GetString("CopyPacMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Duplicate.
+        /// </summary>
+        public static string CopyServerMenu {
+            get {
+                return ResourceManager.GetString("CopyServerMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show Sharing Info.
+        /// </summary>
+        public static string DisplaySharingInfo {
+            get {
+                return ResourceManager.GetString("DisplaySharingInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit Display Name.
+        /// </summary>
+        public static string EditCustomAliasWindow {
+            get {
+                return ResourceManager.GetString("EditCustomAliasWindow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enable System Proxy.
+        /// </summary>
+        public static string EnableProxyMenu {
+            get {
+                return ResourceManager.GetString("EnableProxyMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Encryption.
+        /// </summary>
+        public static string EncryptionHeader {
+            get {
+                return ResourceManager.GetString("EncryptionHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Exit.
+        /// </summary>
+        public static string ExitMenu {
+            get {
+                return ResourceManager.GetString("ExitMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Export as Client....
+        /// </summary>
+        public static string ExportClientMenu {
+            get {
+                return ResourceManager.GetString("ExportClientMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Export as Server....
+        /// </summary>
+        public static string ExportServerMenu {
+            get {
+                return ResourceManager.GetString("ExportServerMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Export All to Clipboard.
+        /// </summary>
+        public static string ExportToClipMenu {
+            get {
+                return ResourceManager.GetString("ExportToClipMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Generate.
+        /// </summary>
+        public static string GenerateGuidBtn {
+            get {
+                return ResourceManager.GetString("GenerateGuidBtn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Global.
+        /// </summary>
+        public static string GlobalModeMenu {
+            get {
+                return ResourceManager.GetString("GlobalModeMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Import Client Configuration....
+        /// </summary>
+        public static string ImportClientMenu {
+            get {
+                return ResourceManager.GetString("ImportClientMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Import Config File.
+        /// </summary>
+        public static string ImportConfigMenu {
+            get {
+                return ResourceManager.GetString("ImportConfigMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Import from Clipboard.
+        /// </summary>
+        public static string ImportFromClipMenu {
+            get {
+                return ResourceManager.GetString("ImportFromClipMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Import Server Configuration....
+        /// </summary>
+        public static string ImportServerMenu {
+            get {
+                return ResourceManager.GetString("ImportServerMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Core: KCP.
+        /// </summary>
+        public static string KcpSettingsTab {
+            get {
+                return ResourceManager.GetString("KcpSettingsTab", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Keep current mode unchanged.
+        /// </summary>
+        public static string KeepCurrentModeMenu {
+            get {
+                return ResourceManager.GetString("KeepCurrentModeMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] mgwz_dll {
+        public static byte[] mgwz_dll {
             get {
                 object obj = ResourceManager.GetObject("mgwz_dll", resourceCulture);
                 return ((byte[])(obj));
@@ -93,7 +462,7 @@ namespace v2rayNPF.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap minimize {
+        public static System.Drawing.Bitmap minimize {
             get {
                 object obj = ResourceManager.GetObject("minimize", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -101,9 +470,63 @@ namespace v2rayNPF.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Minimize.
+        /// </summary>
+        public static string MinimizeMainMenu {
+            get {
+                return ResourceManager.GetString("MinimizeMainMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Move to Bottom.
+        /// </summary>
+        public static string MoveBottomMenu {
+            get {
+                return ResourceManager.GetString("MoveBottomMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Move Down.
+        /// </summary>
+        public static string MoveDownMenu {
+            get {
+                return ResourceManager.GetString("MoveDownMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Move to Top.
+        /// </summary>
+        public static string MoveTopMenu {
+            get {
+                return ResourceManager.GetString("MoveTopMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Move Up.
+        /// </summary>
+        public static string MoveUpMenu {
+            get {
+                return ResourceManager.GetString("MoveUpMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to OK.
+        /// </summary>
+        public static string OKBtn {
+            get {
+                return ResourceManager.GetString("OKBtn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap option {
+        public static System.Drawing.Bitmap option {
             get {
                 object obj = ResourceManager.GetObject("option", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -113,10 +536,28 @@ namespace v2rayNPF.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] pac_txt {
+        public static byte[] pac_txt {
             get {
                 object obj = ResourceManager.GetObject("pac_txt", resourceCulture);
                 return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PAC.
+        /// </summary>
+        public static string PacModeMenu {
+            get {
+                return ResourceManager.GetString("PacModeMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Port.
+        /// </summary>
+        public static string PortHeader {
+            get {
+                return ResourceManager.GetString("PortHeader", resourceCulture);
             }
         }
         
@@ -130,7 +571,7 @@ namespace v2rayNPF.Properties {
         ///hide-console
         ///.
         /// </summary>
-        internal static string privoxy_conf {
+        public static string privoxy_conf {
             get {
                 return ResourceManager.GetString("privoxy_conf", resourceCulture);
             }
@@ -139,7 +580,7 @@ namespace v2rayNPF.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] privoxy_exe {
+        public static byte[] privoxy_exe {
             get {
                 object obj = ResourceManager.GetObject("privoxy_exe", resourceCulture);
                 return ((byte[])(obj));
@@ -147,9 +588,36 @@ namespace v2rayNPF.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Protocol.
+        /// </summary>
+        public static string ProtocolHeader {
+            get {
+                return ResourceManager.GetString("ProtocolHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to System Proxy Mode.
+        /// </summary>
+        public static string ProxyModeMenu {
+            get {
+                return ResourceManager.GetString("ProxyModeMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove.
+        /// </summary>
+        public static string RemoveServerMenu {
+            get {
+                return ResourceManager.GetString("RemoveServerMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap restart {
+        public static System.Drawing.Bitmap restart {
             get {
                 object obj = ResourceManager.GetObject("restart", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -157,9 +625,27 @@ namespace v2rayNPF.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Restart.
+        /// </summary>
+        public static string RestartMainMenu {
+            get {
+                return ResourceManager.GetString("RestartMainMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Core: Routing.
+        /// </summary>
+        public static string RoutingSettingsTab {
+            get {
+                return ResourceManager.GetString("RoutingSettingsTab", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap server {
+        public static System.Drawing.Bitmap server {
             get {
                 object obj = ResourceManager.GetObject("server", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -167,9 +653,252 @@ namespace v2rayNPF.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Servers.
+        /// </summary>
+        public static string ServerListTrayMenu {
+            get {
+                return ResourceManager.GetString("ServerListTrayMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Server.
+        /// </summary>
+        public static string ServerMainMenu {
+            get {
+                return ResourceManager.GetString("ServerMainMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Server Type.
+        /// </summary>
+        public static string ServerTypeHeader {
+            get {
+                return ResourceManager.GetString("ServerTypeHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Allow connection from LAN.
+        /// </summary>
+        public static string SettingsAllowLan {
+            get {
+                return ResourceManager.GetString("SettingsAllowLan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Blocked.
+        /// </summary>
+        public static string SettingsBlockedRoutingTab {
+            get {
+                return ResourceManager.GetString("SettingsBlockedRoutingTab", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bypass mainland China addresses (Requires Core v2.46+).
+        /// </summary>
+        public static string SettingsBypassMainlandAddress {
+            get {
+                return ResourceManager.GetString("SettingsBypassMainlandAddress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bypass mainland China IP (Requires Core v2.46+).
+        /// </summary>
+        public static string SettingsBypassMainlandIp {
+            get {
+                return ResourceManager.GetString("SettingsBypassMainlandIp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Custom DNS (Separated with Comma).
+        /// </summary>
+        public static string SettingsCustomDns {
+            get {
+                return ResourceManager.GetString("SettingsCustomDns", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Custom GFWList Address (Leave blank if not needed).
+        /// </summary>
+        public static string SettingsCustomGFWListAddress {
+            get {
+                return ResourceManager.GetString("SettingsCustomGFWListAddress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Direct Connect.
+        /// </summary>
+        public static string SettingsDirectRoutingTab {
+            get {
+                return ResourceManager.GetString("SettingsDirectRoutingTab", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Local Listening Port 1.
+        /// </summary>
+        public static string SettingsInbound1 {
+            get {
+                return ResourceManager.GetString("SettingsInbound1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Local Listening Port 2.
+        /// </summary>
+        public static string SettingsInbound2 {
+            get {
+                return ResourceManager.GetString("SettingsInbound2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Protocol.
+        /// </summary>
+        public static string SettingsInboundProtocol {
+            get {
+                return ResourceManager.GetString("SettingsInboundProtocol", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enable UDP.
+        /// </summary>
+        public static string SettingsInboundUdp {
+            get {
+                return ResourceManager.GetString("SettingsInboundUdp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enable Local Logging (Default: Off).
+        /// </summary>
+        public static string SettingsLogging {
+            get {
+                return ResourceManager.GetString("SettingsLogging", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Logging Level.
+        /// </summary>
+        public static string SettingsLogLevel {
+            get {
+                return ResourceManager.GetString("SettingsLogLevel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings.
+        /// </summary>
+        public static string SettingsMainMenu {
+            get {
+                return ResourceManager.GetString("SettingsMainMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enable Mux Multiplex (Default: On).
+        /// </summary>
+        public static string SettingsMuxMultiplex {
+            get {
+                return ResourceManager.GetString("SettingsMuxMultiplex", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Through Proxy.
+        /// </summary>
+        public static string SettingsProxyRoutingTab {
+            get {
+                return ResourceManager.GetString("SettingsProxyRoutingTab", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Custom routing rules separated with comma:.
+        /// </summary>
+        public static string SettingsRoutingRulesLabel {
+            get {
+                return ResourceManager.GetString("SettingsRoutingRulesLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sync local time on launch (May Fail).
+        /// </summary>
+        public static string SettingsSyncTime {
+            get {
+                return ResourceManager.GetString("SettingsSyncTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to * Enabling System Proxy:.
+        /// </summary>
+        public static string SettingsSystemProxyHintLn1 {
+            get {
+                return ResourceManager.GetString("SettingsSystemProxyHintLn1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Global Mode: Port = Socks Port + 1.
+        /// </summary>
+        public static string SettingsSystemProxyHintLn2 {
+            get {
+                return ResourceManager.GetString("SettingsSystemProxyHintLn2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PAC Mode: Port = Socks Port + 2; Priority: PAC &gt; V2Ray Routing.
+        /// </summary>
+        public static string SettingsSystemProxyHintLn3 {
+            get {
+                return ResourceManager.GetString("SettingsSystemProxyHintLn3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Launch on system startup (May Fail).
+        /// </summary>
+        public static string SettingsSystemStartup {
+            get {
+                return ResourceManager.GetString("SettingsSystemStartup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings.
+        /// </summary>
+        public static string SettingsWindow {
+            get {
+                return ResourceManager.GetString("SettingsWindow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Shadowsocks Server.
+        /// </summary>
+        public static string ShadowsocksWindow {
+            get {
+                return ResourceManager.GetString("ShadowsocksWindow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] sysproxy_exe {
+        public static byte[] sysproxy_exe {
             get {
                 object obj = ResourceManager.GetObject("sysproxy_exe", resourceCulture);
                 return ((byte[])(obj));
@@ -179,10 +908,19 @@ namespace v2rayNPF.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] sysproxy64_exe {
+        public static byte[] sysproxy64_exe {
             get {
                 object obj = ResourceManager.GetObject("sysproxy64_exe", resourceCulture);
                 return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to VMess Server.
+        /// </summary>
+        public static string VMessWindow {
+            get {
+                return ResourceManager.GetString("VMessWindow", resourceCulture);
             }
         }
     }
